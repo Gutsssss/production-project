@@ -4,6 +4,11 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "sass"
+  ],
 
   // Prettier настройки (без конфиг файла)
   "editor.formatOnSave": false,
