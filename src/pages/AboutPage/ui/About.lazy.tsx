@@ -1,7 +1,5 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-export const AboutPageLazy = lazy(() =>
-  import("./AboutPage").then((module) => ({
+export const AboutPageLazy = lazy(() => import('./AboutPage').then((module) => ({
     default: module.AboutPage,
-  }))
-);
+})));
