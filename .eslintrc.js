@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest:true
   },
   extends: ["plugin:react/recommended", "airbnb"],
   parser: "@typescript-eslint/parser",
@@ -21,7 +22,7 @@ module.exports = {
     "@typescript-eslint/indent": [2, 4],
     "react/jsx-filename-extension": [
       2,
-      { extensions: [".js", ".jsx", ".tsx"] },
+      { extensions: [".js", ".jsx", ".tsx",".ts"] },
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
@@ -36,7 +37,9 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
-    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix']
+    'linebreak-style': ['warn', process.platform === 'win32' ? 'windows' : 'unix'],
+    "no-multiple-empty-lines":"warn",
+    "max-len":['error',{"ignoreComments":true}]
   },
   globals: {
     __IS_DEV__: true,
