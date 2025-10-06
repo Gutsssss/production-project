@@ -2,13 +2,12 @@
     --font-family: consolas, "Times New Roman", serif;
     --font-size-m: 16px;
     --font-line-m: 24px;
-    --font-m: var(--font-size-m)/var(--font-line-m) var(--font-family);
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family);
     --font-size-l: 24px;
     --font-line-l: 32px;
-    --font-l: var(--font-size-l)/var(--font-line-l) var(--font-family);
-
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family);
+    /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
     // Размеры
-
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collpased: 80px;
