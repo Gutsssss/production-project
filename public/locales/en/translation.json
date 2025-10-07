@@ -1,5 +1,7 @@
 {
   "Тестовый перевод": "Test translation",
   "Язык": "English",
-  "Страница не найдена": "Page Not Found"
+  "Страница не найдена": "Page Not Found",
+  "Что то пошло не так":"Something went wrong",
+  "Перезагрузить страницу":"Reload page"
 }
