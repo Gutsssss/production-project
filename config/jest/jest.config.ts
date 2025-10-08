@@ -6,7 +6,7 @@
 
  */
 
-import path from "path";
+import path from 'path';
 
 export default {
 
@@ -54,7 +54,7 @@ export default {
     ],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg':path.resolve(__dirname,'jestEmptyComponent.tsx')
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     rootDir: '../../',

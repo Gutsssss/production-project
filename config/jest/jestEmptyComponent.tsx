@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
 const jestEmpyComponent = function () {
-    return <div></div>
-}
+    return <div />;
+};
 export default jestEmpyComponent;
