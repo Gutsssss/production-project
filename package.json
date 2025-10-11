@@ -18,6 +18,7 @@
     "jest:init": "jest --init",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "loki test",
+    "test:ui:update": "loki update",
     "test:ui:ok": "loki test approved",
     "test:ui:ci":"npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
