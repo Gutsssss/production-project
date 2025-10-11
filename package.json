@@ -20,6 +20,7 @@
     "test:ui": "loki test",
     "test:ui:ok": "loki test approved",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "storybook:build": "build-storybook -c ./config/storybook",
     "build-storybook": "storybook build -c config/storybook"
   },
   "devDependencies": {
