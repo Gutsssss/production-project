@@ -19,9 +19,9 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "loki test",
     "test:ui:ok": "loki test approved",
+    "test:ui:ci":"npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook",
-    "build-storybook": "storybook build -c config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
