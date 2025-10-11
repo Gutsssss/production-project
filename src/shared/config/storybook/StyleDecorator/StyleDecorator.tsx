@@ -1,7 +1,5 @@
-import 'app/styles/index.scss'
+import 'app/styles/index.scss';
 import { Story } from '@storybook/react';
 
-export const StyleDecorator = (story: any) => {
-  return story();
-};
+export const StyleDecorator = (story: any) => story();
 export default StyleDecorator;
