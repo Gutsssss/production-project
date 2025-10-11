@@ -10,7 +10,6 @@ jobs:
     strategy:
       matrix:
         node-version: '18'
-        cashe: 'npm'
 
     steps:
       - uses: actions/checkout@v2
