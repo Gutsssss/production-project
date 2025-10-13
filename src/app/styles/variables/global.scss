@@ -10,9 +10,18 @@
     --font-line-xl: 40px;
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family);
 
-    /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
-    // Размеры
+    /* Размеры */
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collpased: 80px;
+
+    /* stylelint-disable-next-line scss/double-slash-comment-whitespace-inside */
+
+    /* z-Индексы */
+
+    --modal-z-index: 10;
+
+    /* Модальное окно */
+
+    --overlay-color: rgba(0 0 0 / 60%);
 }
