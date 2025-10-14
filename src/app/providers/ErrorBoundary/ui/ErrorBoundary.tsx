@@ -1,16 +1,16 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from 'widgets/PageError';
 
-interface ErrorBoundaryParops {
+interface ErrorBoundaryProps {
     children:ReactNode
 }
 interface ErrorBoundaryState {
     hasError:boolean
 }
 
-export class ErrorBoundary extends React.Component<ErrorBoundaryParops,
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps,
 ErrorBoundaryState> {
-    constructor(props:ErrorBoundaryParops) {
+    constructor(props:ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
     }

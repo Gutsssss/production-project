@@ -35,7 +35,9 @@ export default {
         'node',
 
     ],
-
+    globals: {
+        __IS_DEV__: true,
+    },
     moduleDirectories: [
 
         'node_modules',

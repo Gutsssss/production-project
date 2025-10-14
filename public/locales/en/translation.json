@@ -2,7 +2,9 @@
   "Тестовый перевод": "Test translation",
   "Язык": "English",
   "Страница не найдена": "Page Not Found",
-  "Что то пошло не так":"Something went wrong",
-  "Перезагрузить страницу":"Reload page",
-  "Короткая версия":"En"
+  "Что то пошло не так": "Something went wrong",
+  "Перезагрузить страницу": "Reload page",
+  "Короткая версия": "En",
+  "increment": "increment",
+  "decrement": "decrement"
 }
