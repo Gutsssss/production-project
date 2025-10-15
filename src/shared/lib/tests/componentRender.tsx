@@ -8,13 +8,13 @@ import i18nForTest from '../../config/i18n/i18nForTests';
 
 export interface componentRenderOptions {
     route?:string,
-    inintialState?:DeepPartial<StateSchema>
+    initialState?:DeepPartial<StateSchema>
 }
 
 export function componentRender(component:ReactNode, options:componentRenderOptions = {}) {
-    const { route = '/', inintialState } = options;
+    const { route = '/', initialState } = options;
     return render(
-        <StoreProvider inintialState={inintialState}>
+        <StoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTest}>
                     {component}

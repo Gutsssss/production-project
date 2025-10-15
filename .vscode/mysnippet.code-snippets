@@ -3,6 +3,7 @@
     "prefix": "mysnippet",
     "body": [
       "import { classNames } from \"shared/lib/classNames/classNames\";",
+      "import { useTranslation } from 'react-i18next';",
       "import cls from \"./${TM_FILENAME_BASE}.module.scss\";",
       "",
       "interface ${TM_FILENAME_BASE}Props {",
@@ -10,6 +11,7 @@
       "}",
       "",
       "export const ${TM_FILENAME_BASE} = ({ className }: ${TM_FILENAME_BASE}Props) => {",
+      "   const {t} = useTranslation",
       "  return (",
       "    <div className={classNames(cls, {}, [className])}>",
       "    </div>",

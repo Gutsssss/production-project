@@ -1,0 +1,15 @@
+.InputWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+}
+
+.placeholder {
+    margin-right: 5px;
+}

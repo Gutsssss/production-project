@@ -6,5 +6,7 @@
   "Перезагрузить страницу": "Reload page",
   "Короткая версия": "En",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Имя пользователя":"Username",
+  "Пароль":"Password"
 }

@@ -10,7 +10,8 @@ interface ModalProps {
   className?: string;
   children?:ReactNode;
   isOpen?:boolean;
-  onCLose?:() => void
+  onCLose?:() => void;
+  lazy?:boolean;
 }
 const ANIMATION_TIME = 300;
 export const Modal = (props: ModalProps) => {
@@ -19,10 +20,17 @@ export const Modal = (props: ModalProps) => {
         className,
         isOpen,
         onCLose,
+        lazy,
     } = props;
     const [isClosing, setIsclosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const { theme } = useTheme();
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
     const closeHandler = useCallback(() => {
         if (onCLose) {
             setIsclosing(true);
@@ -53,9 +61,12 @@ export const Modal = (props: ModalProps) => {
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
+    if (lazy && !isMounted) {
+        return null;
+    }
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={classNames(
