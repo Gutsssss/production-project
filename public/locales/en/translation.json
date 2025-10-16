@@ -8,5 +8,8 @@
   "increment": "increment",
   "decrement": "decrement",
   "Имя пользователя":"Username",
-  "Пароль":"Password"
+  "Пароль":"Password",
+  "Неправильно введены логин или пароль": "Incorrect login or password",
+  "Форма авторизации":"Auth form",
+    "Выйти":"Logout"
 }
