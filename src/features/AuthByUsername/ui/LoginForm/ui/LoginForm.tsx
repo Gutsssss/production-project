@@ -9,10 +9,11 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
 import { type ReducerList } from 'shared/lib/useAsyncReducer/useAcyncReducer';
-import { getLoginUsername } from '../../../model/selectors/getLoginUsername';
-import { getLoginPassword } from '../../../model/selectors/getLoginPassword';
-import { getLoginLoading } from '../../../model/selectors/getLoginLoading';
-import { getLoginError } from '../../../model/selectors/getLoginError';
+import { getLoginUsername } from
+    'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginLoading } from '../../../model/selectors/getLoginLoading/getLoginLoading';
+import { getLoginError } from '../../../model/selectors/getLoginError/getLoginError';
 import { loginByUsername }
     from '../../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../../model/slice/LoginSlice';
