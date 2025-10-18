@@ -3,25 +3,38 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { memo, useCallback, useState } from 'react';
+import {
+    memo, useCallback,
+} from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { type ReducerList } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { getLoginUsername } from '../../../model/selectors/getLoginUsername';
+import { getLoginPassword } from '../../../model/selectors/getLoginPassword';
+import { getLoginLoading } from '../../../model/selectors/getLoginLoading';
+import { getLoginError } from '../../../model/selectors/getLoginError';
 import { loginByUsername }
     from '../../../model/services/loginByUsername/loginByUsername';
-import { loginActions } from '../../../model/slice/LoginSlice';
+import { loginActions, loginReducer } from '../../../model/slice/LoginSlice';
 import cls from './LoginForm.module.scss';
-import { getLoginState } from '../../../model/selectors/getLoginState';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
+const initialReducers:ReducerList = {
+    loginForm: loginReducer,
+};
+
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
-    const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
-    const {
-        username, password, isLoading, error,
-    } = useSelector(getLoginState);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginLoading);
+    const error = useSelector(getLoginError);
+    useAcyncReducer({ reducers: initialReducers, removeAfterUnmount: true });
+
     const onChangeUsername = useCallback((value:string) => {
         dispatch(loginActions.setUsername(value));
     }, [dispatch]);
