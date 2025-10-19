@@ -13,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader />;
+const Template: ComponentStory<typeof Loader> = () => <Loader />;
 
 export const Normal = Template.bind({});
 Normal.args = {

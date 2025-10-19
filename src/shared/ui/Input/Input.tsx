@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps{
 }
 
 export const Input = memo((props: InputProps) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [isFocused, setIsFocused] = useState(false);
     const ref = useRef<HTMLInputElement>(null);
     const {

@@ -8,7 +8,10 @@ import { buildDevServer } from './buildDevServer';
 export function buildWebpackConfig(
     options: BuildOptions,
 ): webpack.Configuration {
-    const { paths, mode, isDev } = options;
+    const {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        paths, mode, isDev, apiUrl,
+    } = options;
     return {
         mode,
         // Стартовая точка приложения
