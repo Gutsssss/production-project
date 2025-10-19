@@ -11,6 +11,13 @@
     {"id":1,"username":"admin","password":"123"}
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Matvey",
+    "lastname": "Masterskikh",
+    "age": "23",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Tymen",
+    "username": "Areuss",
+    "avatar": "https://i.pinimg.com/736x/31/7a/f0/317af0b8ed57b0c0265c1c0b27fd274d.jpg"
   }
 }

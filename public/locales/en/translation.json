@@ -7,9 +7,10 @@
   "Короткая версия": "En",
   "increment": "increment",
   "decrement": "decrement",
-  "Имя пользователя":"Username",
-  "Пароль":"Password",
+  "Имя пользователя": "Username",
+  "Пароль": "Password",
   "Неправильно введены логин или пароль": "Incorrect login or password",
-  "Форма авторизации":"Auth form",
-    "Выйти":"Logout"
+  "Форма авторизации": "Auth form",
+  "Выйти": "Logout",
+  "PROFILE": "PROFILE"
 }
