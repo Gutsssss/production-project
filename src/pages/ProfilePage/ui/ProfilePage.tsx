@@ -1,7 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
-import { profileReducer } from 'entities/Profile';
+import { fetchProfileData, profileReducer } from 'entities/Profile';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useEffect } from 'react';
+import { ProfileCard } from 'entities/User';
 
 interface ProfilePageProps {
   className?: string;
@@ -12,11 +14,14 @@ const initialReducers:ReducerList = {
 };
 
 export const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
     useAcyncReducer({ reducers: initialReducers, removeAfterUnmount: true });
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
     return (
         <div className={classNames('', {}, [className])}>
-            {t('PROFILE')}
+            <ProfileCard />
         </div>
     );
 };

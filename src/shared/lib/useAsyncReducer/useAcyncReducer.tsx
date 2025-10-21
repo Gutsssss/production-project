@@ -8,8 +8,6 @@ export type ReducerList = {
     [name in StateSchemaKey]?: Reducer
 }
 
-type ReducerListEntry = [StateSchemaKey, Reducer]
-
 interface useAsyncReducerProps {
     reducers:ReducerList,
     removeAfterUnmount?:boolean
@@ -20,15 +18,15 @@ export const useAcyncReducer = (props:useAsyncReducerProps) => {
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]:ReducerListEntry) => {
-            store.reducerManager.add(name, reducer);
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as StateSchemaKey, reducer);
             dispatch({ type: `@ININT ${name} reducer` });
         });
 
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([name]:ReducerListEntry) => {
-                    store.reducerManager.remove(name);
+                Object.entries(reducers).forEach(([name]) => {
+                    store.reducerManager.remove(name as StateSchemaKey);
                     dispatch({ type: `@DESTROY ${name} reducer` });
                 });
             }

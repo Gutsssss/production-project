@@ -13,7 +13,7 @@ export interface StateSchema {
     counter:CounterSchema
     user:UserSchema,
     loginForm?:LoginSchema,
-    profile:ProfileSchema
+    profile?:ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -31,7 +31,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api:AxiosInstance,
-    navigate:(to:To, options?:NavigateOptions) => void
+    navigate?:(to:To, options?:NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
