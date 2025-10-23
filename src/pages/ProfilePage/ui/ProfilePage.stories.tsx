@@ -1,10 +1,12 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ProfilePage } from 'pages/ProfilePage/ui/ProfilePage';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import { StateDecorator } from 'shared/config/storybook/StateDecorator/StateDecorator';
-import { ProfilePage } from './ProfilePage';
+import avatar from 'shared/assets/icons/storybook.jpg';
 
 export default {
     title: 'pages/ProfilePage',
@@ -14,13 +16,38 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {
-};
-Light.decorators = [StateDecorator({})];
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StateDecorator({
+    profile: {
+        form: {
+            first: 'Матвей',
+            lastname: 'Мастерских',
+            age: 24,
+            currency: Currency.USD,
+            country: Country.German,
+            city: 'Tymen',
+            username: 'Areuss',
+            avatar,
+        },
+    },
+})];
+
 export const Dark = Template.bind({});
-Dark.args = {
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StateDecorator({})];
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StateDecorator({
+    profile: {
+        form: {
+            first: 'Матвей',
+            lastname: 'Мастерских',
+            age: 24,
+            currency: Currency.USD,
+            country: Country.German,
+            city: 'Tymen',
+            username: 'Areuss',
+            avatar,
+        },
+    },
+})];

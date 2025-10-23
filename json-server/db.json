@@ -33,7 +33,7 @@
   "profile": {
     "first": "Матвей",
     "lastname": "Мастерских",
-    "age": "24",
+    "age": 24,
     "currency": "RUB",
     "country": "Belarus",
     "city": "Tymen",

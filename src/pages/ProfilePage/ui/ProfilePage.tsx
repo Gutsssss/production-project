@@ -6,8 +6,10 @@ import {
     getProfileForm,
     getProfileLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     profileReducer,
+    ValidateProfileErrors,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
@@ -15,6 +17,8 @@ import { ProfileCard } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
@@ -27,13 +31,24 @@ const initialReducers:ReducerList = {
 
 export const ProfilePage = ({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
+    const { t } = useTranslation('profile');
     const form = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+    const validateErrorTranslation = {
+        [ValidateProfileErrors.INVALID_AGE]: t('Некорректный возраст'),
+        [ValidateProfileErrors.INVALID_CITY]: t('Некорректный Город'),
+        [ValidateProfileErrors.INVALID_NAME]: t('Некорректное имя или фамилия'),
+        [ValidateProfileErrors.SERVER_ERROR]: t('Серверная ошибка'),
+        [ValidateProfileErrors.INVALID_DATA]: t('Данные не указаны'),
+    };
     useAcyncReducer({ reducers: initialReducers, removeAfterUnmount: true });
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
     const onChangeFirstname = useCallback((value?:string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -41,8 +56,8 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     const onChangeLastname = useCallback((value?:string) => {
         dispatch(profileActions.updateProfile({ lastname: value || '' }));
     }, [dispatch]);
-    const onChangeAge = useCallback((value?:number) => {
-        dispatch(profileActions.updateProfile({ age: value }));
+    const onChangeAge = useCallback((value?:string) => {
+        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
     }, [dispatch]);
     const onChangeCity = useCallback((value?:string) => {
         dispatch(profileActions.updateProfile({ city: value || '' }));
@@ -62,6 +77,14 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <div className={classNames('', {}, [className])}>
             <ProfilePageHeader />
+            {validateErrors?.length
+            && validateErrors?.map((err) => (
+                <Text
+                    theme={TextTheme.ERROR}
+                    key={err}
+                    title={validateErrorTranslation[err]}
+                />
+            ))}
             <ProfileCard
                 readonly={readonly}
                 data={form}
