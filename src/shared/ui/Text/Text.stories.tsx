@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { TextTheme, Text } from './Text';
+import { TextTheme, Text, TextSize } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -46,4 +46,10 @@ export const ErrorText = Template.bind({});
 ErrorText.args = {
     text: 'sub text sub text sub text',
     theme: TextTheme.ERROR,
+};
+export const Size = Template.bind({});
+Size.args = {
+    text: 'sub text sub text sub text',
+    theme: TextTheme.ERROR,
+    size: TextSize.L,
 };

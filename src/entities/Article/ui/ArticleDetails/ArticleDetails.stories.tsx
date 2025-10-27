@@ -1,21 +1,18 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import { ArticleType, ArticleBlockType } from 'entities/Article/model/types/article';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StateDecorator } from 'shared/config/storybook/StateDecorator/StateDecorator';
-import { ArticleDetailsPage } from './ArticleDetailsPage';
+import { ArticleDetails } from './ArticleDetails';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'entities/ArticleDetails',
+    component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleDetails>;
 
+const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
 const article:Article = {
     id: '1',
     title: 'Javascript news',
@@ -85,20 +82,27 @@ const article:Article = {
         },
     ],
 };
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
-export const Light = Template.bind({});
-Light.args = {
+export const Normal = Template.bind({});
+Normal.args = {
 };
-Light.decorators = [StateDecorator({
+Normal.decorators = [StateDecorator({
     articleDetails: {
         data: article,
     },
 })];
-export const Dark = Template.bind({});
-Dark.args = {
+export const Error = Template.bind({});
+Error.args = {
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StateDecorator({
+Error.decorators = [StateDecorator({
     articleDetails: {
-        data: article,
+        error: '',
+    },
+})];
+export const Loading = Template.bind({});
+Loading.args = {
+};
+Loading.decorators = [StateDecorator({
+    articleDetails: {
+        isLoading: true,
     },
 })];
