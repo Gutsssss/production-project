@@ -4,10 +4,12 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { AddCommentSchema } from 'entities/Comment/model/types/AddCommentSchema';
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
@@ -15,7 +17,9 @@ export interface StateSchema {
     user:UserSchema,
     profile?:ProfileSchema,
     loginForm?:LoginSchema,
-    articleDetails?:ArticleDetailsSchema
+    articleDetails?:ArticleDetailsSchema,
+    articleDetailsComments?:ArticleDetailsCommentsSchema,
+    addCommentForm?:AddCommentSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

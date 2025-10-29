@@ -14,7 +14,7 @@ interface useAsyncReducerProps {
 }
 
 export const useAcyncReducer = (props:useAsyncReducerProps) => {
-    const { reducers, removeAfterUnmount = false } = props;
+    const { reducers, removeAfterUnmount = true } = props;
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
     useEffect(() => {
