@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { addCommentForArticle, CommentList } from 'entities/Comment';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux';
 import { useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
 import { useCallback } from 'react';
 import { AddCommentInArticle } from 'features/AddCommentInArticle';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import cls from './ArticleDetailsPage.module.scss';
 import { fetchArticleDetailsCommentsById } from '../model/services/fetchDetailsCommentsById';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -22,9 +24,13 @@ const initialReducers = {
     articleDetailsComments: articleDetailsCommentsReducer,
 };
 export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
+    const navigate = useNavigate();
     const { t } = useTranslation();
     const { id } = useParams<{id:string}>();
     const dispatch = useAppDispatch();
+    const onReturn = useCallback(() => {
+        navigate(RouterPath.articles);
+    }, [navigate]);
     const comments = useSelector(getArticleComments.selectAll);
     const isCommentsLoading = useSelector(getArticleDetailsCommentsLoading);
     const onSendComment = useCallback((text:string) => {
@@ -41,6 +47,9 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
     return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Button theme={ButtonTheme.OUTLINE} onClick={onReturn}>
+                {t('Назад к списку')}
+            </Button>
             <ArticleDetails id={id} />
             <Text className={cls.commentsTitle} title={t('Комментарии')} />
             <AddCommentInArticle onSend={onSendComment} />

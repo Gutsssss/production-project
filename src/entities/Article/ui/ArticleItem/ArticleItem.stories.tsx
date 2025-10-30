@@ -1,32 +1,28 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import { ArticleType, ArticleBlockType } from 'entities/Article/model/types/article';
-import { StateDecorator } from 'shared/config/storybook/StateDecorator/StateDecorator';
-import { ArticleDetailsPage } from './ArticleDetailsPage';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArticleBlockType, ArticleType, ArticleView } from 'entities/Article/model/types/article';
+import { ArticleItem } from './ArticleItem';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'entities/ArticleItem',
+    component: ArticleItem,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleItem>;
 
-const article:Article = {
+const Template: ComponentStory<typeof ArticleItem> = (args) => <ArticleItem {...args} />;
+const article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
-    createdAt: '26.02.2022',
     user: {
         id: '1',
         username: 'areuss',
     },
+    createdAt: '26.02.2022',
     type: [ArticleType.IT],
     blocks: [
         {
@@ -89,20 +85,13 @@ const article:Article = {
         },
     ],
 };
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
-export const Light = Template.bind({});
-Light.args = {
+export const Normal = Template.bind({});
+Normal.args = {
+    view: ArticleView.BIG_PLATE,
+    article,
 };
-Light.decorators = [StateDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
-export const Dark = Template.bind({});
-Dark.args = {
+export const Small = Template.bind({});
+Small.args = {
+    view: ArticleView.SMALL_PLATE,
+    article,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StateDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];

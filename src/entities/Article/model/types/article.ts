@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 export enum ArticleBlockType {
     CODE = 'CODE',
     TEXT = 'TEXT',
@@ -8,7 +10,10 @@ export interface ArticelBlcokBase {
     id:string
     type:ArticleBlockType
 }
-
+export enum ArticleView {
+    BIG_PLATE = 'BIG_PLATE',
+    SMALL_PLATE = 'SMALL_PLATE',
+}
 export interface ArticleTextBlock extends ArticelBlcokBase {
     type:ArticleBlockType.TEXT
     paragraphs:string[]
@@ -32,12 +37,13 @@ export enum ArticleType {
 }
 
 export interface Article {
-    'id': string,
-      'title': string,
-      'subtitle': string,
-      'img': string,
-      'views': number,
-      'createdAt': string,
-      'type': ArticleType[],
-      'blocks':ArticleBlock[]
+    id: string,
+      title: string,
+      subtitle: string,
+      user:User
+      img: string,
+      views: number,
+      createdAt: string,
+      type: ArticleType[],
+      blocks:ArticleBlock[]
 }
