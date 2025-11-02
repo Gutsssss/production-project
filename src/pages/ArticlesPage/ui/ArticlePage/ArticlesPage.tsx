@@ -2,21 +2,21 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleList, ArticleView } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
-import { articlePageActions, articlePageReducer, getArticleList } from 'pages/ArticlesPage/model/slice/articlesPageSlice';
 import { useInintinalEffect } from 'shared/lib/hooks/useInintialEffect/useInintialEffect';
-import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList';
 import { useSelector } from 'react-redux';
-import {
-    getArticlesPageError,
-    getArticlesPageLoading,
-    getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/getArticlesPageSelectos';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { useCallback } from 'react';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage';
+import {
+    getArticlesPageError,
+    getArticlesPageLoading,
+    getArticlesPageView,
+} from '../../model/selectors/getArticlesPageSelectos';
+import { articlePageActions, articlePageReducer, getArticleList } from '../../model/slice/articlesPageSlice';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
+import { initActionArticlePage } from '../../model/services/initActionArticlePage';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -35,15 +35,12 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const onChangeView = useCallback((view:ArticleView) => {
         dispatch(articlePageActions.setView(view));
     }, [dispatch]);
-    useAcyncReducer({ reducers });
+    useAcyncReducer({ reducers, removeAfterUnmount: false });
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
     useInintinalEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticleList({
-            page: 1,
-        }));
+        dispatch(initActionArticlePage());
     });
     if (error) {
         return (
