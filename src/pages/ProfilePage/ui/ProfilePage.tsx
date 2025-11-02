@@ -21,6 +21,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInintinalEffect } from 'shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
@@ -76,7 +77,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ country: value || '' }));
     }, [dispatch]);
     return (
-        <div className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             <ProfilePageHeader />
             {validateErrors?.length
             && validateErrors?.map((err) => (
@@ -100,6 +101,6 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
                 onChangeCurrency={onChangeCurrency}
                 onChangeCountry={onChangeCountry}
             />
-        </div>
+        </Page>
     );
 };

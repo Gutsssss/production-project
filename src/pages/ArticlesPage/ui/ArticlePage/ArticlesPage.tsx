@@ -15,6 +15,8 @@ import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { useCallback } from 'react';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
+import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -34,9 +36,14 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
         dispatch(articlePageActions.setView(view));
     }, [dispatch]);
     useAcyncReducer({ reducers });
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
     useInintinalEffect(() => {
-        dispatch(fetchArticleList());
         dispatch(articlePageActions.initState());
+        dispatch(fetchArticleList({
+            page: 1,
+        }));
     });
     if (error) {
         return (
@@ -44,9 +51,9 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
         );
     }
     return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
+        <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
             <ArticleViewSelector view={view} onViewClick={onChangeView} />
             <ArticleList articles={articles} view={view} isLoading={isLoading} />
-        </div>
+        </Page>
     );
 };

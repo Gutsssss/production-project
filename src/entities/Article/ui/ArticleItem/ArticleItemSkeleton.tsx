@@ -13,7 +13,7 @@ interface ArticleItemProps {
 }
 
 export const ArticleItemSkeleton = memo((props: ArticleItemProps) => {
-    const { className, view = ArticleView.SMALL_PLATE } = props;
+    const { className, view } = props;
     if (view === ArticleView.BIG_PLATE) {
         return (
             <div className={classNames(cls.ArticleItem, {}, [className, cls[view]])}>

@@ -20,16 +20,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className, articles, isLoading, view = ArticleView.SMALL_PLATE,
     } = props;
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
     return (
-        <div className={classNames(cls.ArticleList, {}, [className])}>
-            {articles?.map((article) => (<ArticleItem key={article.id} view={view} article={article} />))}
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            {articles?.map((article) => (<ArticleItem className={cls.card} key={article.id} view={view} article={article} />))}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

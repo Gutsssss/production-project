@@ -1,5 +1,16 @@
-.ArticleList {
+.BIG_PLATE {
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.SMALL_PLATE {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
+
+    .card {
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
 }

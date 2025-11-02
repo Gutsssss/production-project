@@ -12,6 +12,7 @@ import { useCallback } from 'react';
 import { AddCommentInArticle } from 'features/AddCommentInArticle';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { fetchArticleDetailsCommentsById } from '../model/services/fetchDetailsCommentsById';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -41,12 +42,12 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     });
     useAcyncReducer({ reducers: initialReducers, removeAfterUnmount: true });
     if (!id) {
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             {t('Статья не найдена')}
-        </div>;
+        </Page>;
     }
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <Button theme={ButtonTheme.OUTLINE} onClick={onReturn}>
                 {t('Назад к списку')}
             </Button>
@@ -59,7 +60,7 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     comments
                 }
             />
-        </div>
+        </Page>
 
     );
 };
