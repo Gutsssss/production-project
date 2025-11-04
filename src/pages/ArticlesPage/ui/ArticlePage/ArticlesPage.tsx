@@ -8,7 +8,7 @@ import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { useCallback } from 'react';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import {
     getArticlesPageError,
     getArticlesPageLoading,

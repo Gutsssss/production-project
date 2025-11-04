@@ -12,7 +12,7 @@ import { useCallback } from 'react';
 import { AddCommentInArticle } from 'features/AddCommentInArticle';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { fetchArticleDetailsCommentsById } from '../model/services/fetchDetailsCommentsById';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
