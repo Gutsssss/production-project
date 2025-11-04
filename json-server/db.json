@@ -165,7 +165,7 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMYC"
       ],
       "blocks": [
         {
@@ -230,11 +230,11 @@
     },
     {
       "id": "4",
-      "title": "Javascript news",
+      "title": "Javascript news 1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10122,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -254,11 +254,11 @@
     },
     {
       "id": "5",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python news 2",
+      "subtitle": "Что нового в PYTHON за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10222,
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -278,14 +278,14 @@
     },
     {
       "id": "6",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "title": "MATH news",
+      "subtitle": "Новая формула для вычисления!",
+      "img": "https://static.vecteezy.com/system/resources/previews/047/508/202/non_2x/doodle-math-blackboard-mathematical-theory-formulas-and-equations-free-vector.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "MATH"
       ],
       "blocks": [
         {

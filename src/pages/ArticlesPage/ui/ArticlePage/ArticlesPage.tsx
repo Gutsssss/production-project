@@ -1,23 +1,24 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleList, ArticleView } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
 import { useInintinalEffect } from 'shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { useSelector } from 'react-redux';
-import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { useCallback } from 'react';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import {
     getArticlesPageError,
     getArticlesPageLoading,
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPageSelectos';
-import { articlePageActions, articlePageReducer, getArticleList } from '../../model/slice/articlesPageSlice';
+import { articlePageReducer, getArticleList } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initActionArticlePage } from '../../model/services/initActionArticlePage';
 import cls from './ArticlesPage.module.scss';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 
 interface ArticlesPageProps {
   className?: string;
@@ -32,15 +33,13 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const isLoading = useSelector(getArticlesPageLoading);
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
-    const onChangeView = useCallback((view:ArticleView) => {
-        dispatch(articlePageActions.setView(view));
-    }, [dispatch]);
+    const [searchParams] = useSearchParams();
     useAcyncReducer({ reducers, removeAfterUnmount: false });
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
     useInintinalEffect(() => {
-        dispatch(initActionArticlePage());
+        dispatch(initActionArticlePage(searchParams));
     });
     if (error) {
         return (
@@ -49,8 +48,8 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }
     return (
         <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
-            <ArticleViewSelector view={view} onViewClick={onChangeView} />
-            <ArticleList articles={articles} view={view} isLoading={isLoading} />
+            <ArticlePageFilters />
+            <ArticleList className={cls.list} articles={articles} view={view} isLoading={isLoading} />
         </Page>
     );
 };

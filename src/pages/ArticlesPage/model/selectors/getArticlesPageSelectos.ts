@@ -1,5 +1,6 @@
 import { StateSchema } from 'app/providers/StateProvider';
-import { ArticleView } from 'entities/Article';
+import { ArtcileSortField, ArticleView } from 'entities/Article';
+import { ArticleType } from 'entities/Article/model/types/article';
 
 export const getArticlesPageLoading = (state:StateSchema) => state.articlePage?.isLoading || false;
 export const getArticlesPageError = (state:StateSchema) => state.articlePage?.error;
@@ -8,3 +9,7 @@ export const getArticlesPageNum = (state:StateSchema) => state.articlePage?.page
 export const getArticlesPageLimit = (state:StateSchema) => state.articlePage?.limit || 9;
 export const getArticlesPageHasMore = (state:StateSchema) => state.articlePage?.hasMore;
 export const getArticlesPageInited = (state:StateSchema) => state.articlePage?._inited;
+export const getArticlesPageOrder = (state:StateSchema) => state.articlePage?.order ?? 'asc';
+export const getArticlesPageSort = (state:StateSchema) => state.articlePage?.sort ?? ArtcileSortField.CREATED;
+export const getArticlesPageSearch = (state:StateSchema) => state.articlePage?.search ?? '';
+export const getArticlesPageType = (state:StateSchema) => state.articlePage?.type ?? ArticleType.ALL;

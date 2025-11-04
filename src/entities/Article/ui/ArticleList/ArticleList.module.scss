@@ -7,10 +7,5 @@
 .SMALL_PLATE {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-
-    .card {
-        margin-right: 30px;
-        margin-bottom: 30px;
-    }
+    gap: 30px;
 }
