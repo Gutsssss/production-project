@@ -6,3 +6,6 @@ export {
 
 } from './model/selectors/getArticleDetailsCommentsData/getArticleDetailsCommentsData';
 export { fetchArticleDetailsCommentsById } from './model/services/fetchDetailsCommentsById';
+export { ArticleDetailsPageRecommendationSchema } from './model/types/ArticleDetailsPageRecomendationSchema';
+export { ArticleDetailsPageSchema } from './model/types/index';
+export { articleDetailsPageReducer } from './model/slice/index';

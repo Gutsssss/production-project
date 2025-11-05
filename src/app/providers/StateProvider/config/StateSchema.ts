@@ -10,19 +10,19 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ScrollSaveSchema } from 'features/ScrollSave';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     counter:CounterSchema
     user:UserSchema,
-    scrollSave:ScrollSaveSchema
+    scrollSave:ScrollSaveSchema,
     profile?:ProfileSchema,
     loginForm?:LoginSchema,
     articleDetails?:ArticleDetailsSchema,
-    articleDetailsComments?:ArticleDetailsCommentsSchema,
     addCommentForm?:AddCommentSchema,
-    articlePage?:ArticlePageSchema
+    articlePage?:ArticlePageSchema,
+    articleDetailsPage?:ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

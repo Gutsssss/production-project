@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +11,7 @@ interface ArticleListProps {
   className?: string;
   articles:Article[];
   view?:ArticleView;
+  target?:HTMLAttributeAnchorTarget
   isLoading?:boolean
 }
 
@@ -21,7 +22,7 @@ const getSkeletons = (view:ArticleView) => new Array(view === ArticleView.SMALL_
 export const ArticleList = memo((props: ArticleListProps) => {
     const { t } = useTranslation();
     const {
-        className, articles, isLoading, view = ArticleView.SMALL_PLATE,
+        className, articles, isLoading, view = ArticleView.SMALL_PLATE, target,
     } = props;
     if (!isLoading && !articles.length) {
         return (
@@ -32,7 +33,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles?.map((article) => (<ArticleItem className={cls.card} key={article.id} view={view} article={article} />))}
+            {articles?.map((article) => (
+                <ArticleItem
+                    target={target}
+                    className={cls.card}
+                    key={article.id}
+                    view={view}
+                    article={article}
+                />
+            ))}
             {isLoading && getSkeletons(view)}
         </div>
     );

@@ -5,12 +5,14 @@ import { articleDetailsReducer } from 'entities/Article';
 import { addCommentFormReducer } from 'entities/Comment';
 import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/LoginSlice';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage';
 
 const defaultAsyncReducers:DeepPartial<ReducersMapObject<StateSchema>> = {
     loginForm: loginReducer,
     articleDetails: articleDetailsReducer,
     profile: profileReducer,
     addCommentForm: addCommentFormReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 export const StateDecorator = (
