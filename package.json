@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-4y1r6v594-areuss-projects.vercel.app",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-mxg54dxze-areuss-projects.vercel.app",
     "build:dev": "webpack --env mode=development",
     "build": "webpack",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
