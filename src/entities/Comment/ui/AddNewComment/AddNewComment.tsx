@@ -4,9 +4,9 @@ import { memo, useCallback } from 'react';
 import { Input } from 'shared/ui/Input/Input';
 import { Button } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getAddCommentFormText } from 'entities/Comment/model/selectors/getAddCommentFormSelectors';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { addCommentFormActions } from 'entities/Comment/model/slice/AddCommentSlice';
+import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormSelectors';
+import { addCommentFormActions } from '../../model/slice/AddCommentSlice';
 import cls from './AddNewComment.module.scss';
 
 interface AddNewCommentProps {

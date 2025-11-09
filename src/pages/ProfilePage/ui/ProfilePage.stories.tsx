@@ -2,11 +2,11 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ProfilePage } from 'pages/ProfilePage/ui/ProfilePage';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { StateDecorator } from 'shared/config/storybook/StateDecorator/StateDecorator';
 import avatar from 'shared/assets/icons/storybook.jpg';
+import { ProfilePage } from '../ui/ProfilePage';
 
 export default {
     title: 'pages/ProfilePage',

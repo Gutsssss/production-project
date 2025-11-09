@@ -9,9 +9,9 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
 import { type ReducerList } from 'shared/lib/useAsyncReducer/useAcyncReducer';
-import { getLoginUsername } from
-    'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+
+import { getLoginUsername } from '../../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginLoading } from '../../../model/selectors/getLoginLoading/getLoginLoading';
 import { getLoginError } from '../../../model/selectors/getLoginError/getLoginError';

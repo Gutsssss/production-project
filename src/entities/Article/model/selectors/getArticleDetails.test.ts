@@ -1,7 +1,7 @@
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from 'entities/Article/model/selectors/getArticleDetails';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StateProvider';
 import { getProfileData } from 'entities/Profile';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from '../../model/selectors/getArticleDetails';
 import { ArticleType, ArticleBlockType } from '../types/article';
 
 describe('getArticleDetails.test', () => {

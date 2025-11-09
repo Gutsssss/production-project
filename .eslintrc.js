@@ -19,6 +19,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'areuss-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -56,6 +57,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'areuss-plugin/areuss-path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
