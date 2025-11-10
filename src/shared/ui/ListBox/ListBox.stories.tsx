@@ -1,0 +1,40 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import { Listbox } from './ListBox';
+
+export default {
+    title: 'shared/Listbox',
+    component: Listbox,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Listbox>;
+
+const Template: ComponentStory<typeof Listbox> = (args) => <Listbox {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    label: 'Введите имя',
+    defaultValue: 'Привет',
+    options: [
+        { value: '123', content: 'asd' },
+        { value: '124', content: 'asd1' },
+        { value: '125', content: 'asd2' },
+    ],
+};
+Primary.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const DirectionTop = Template.bind({});
+DirectionTop.args = {
+    label: 'Введите имя',
+    defaultValue: 'Привет',
+    direction: 'top',
+    options: [
+        { value: '123', content: 'asd' },
+        { value: '124', content: 'asd1' },
+        { value: '125', content: 'asd2' },
+    ],
+};
+DirectionTop.decorators = [ThemeDecorator(Theme.GREEN)];

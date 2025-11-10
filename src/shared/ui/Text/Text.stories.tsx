@@ -47,9 +47,26 @@ ErrorText.args = {
     text: 'sub text sub text sub text',
     theme: TextTheme.ERROR,
 };
-export const Size = Template.bind({});
-Size.args = {
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'hello',
     text: 'sub text sub text sub text',
     theme: TextTheme.ERROR,
     size: TextSize.L,
+};
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    title: 'hello',
+    text: 'sub text sub text sub text',
+    theme: TextTheme.ERROR,
+    size: TextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+    title: 'hello',
+    text: 'sub text sub text sub text',
+    theme: TextTheme.ERROR,
+    size: TextSize.S,
 };

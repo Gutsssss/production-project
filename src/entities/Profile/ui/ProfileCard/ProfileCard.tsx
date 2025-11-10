@@ -7,6 +7,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { Profile } from '../../model/type/type';
 import cls from './ProfileCard.module.scss';
 
@@ -71,61 +72,63 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 <div className={cls.avatarWrapper}>
                     {data?.avatar && <Avatar avatar={data?.avatar} alt={data.avatar} size={150} />}
                 </div>
-                <Input
-                    placeholder={t('Имя')}
-                    value={data?.first}
-                    className={cls.input}
-                    onChange={onChangeFirstname}
-                    readonly={readonly}
-                />
-                <Input
-                    placeholder={t('Фамилия')}
-                    value={data?.lastname}
-                    className={cls.input}
-                    onChange={onChangeLastname}
-                    readonly={readonly}
-                />
-                <Input
-                    placeholder={t('Возраст')}
-                    value={data?.age}
-                    className={cls.input}
-                    onChange={onChangeAge}
-                    readonly={readonly}
-                    type="number"
-                />
-                <Input
-                    placeholder={t('Город')}
-                    value={data?.city}
-                    className={cls.input}
-                    onChange={onChangeCity}
-                    readonly={readonly}
-                />
-                <Input
-                    placeholder={t('Имя пользователя')}
-                    value={data?.username}
-                    className={cls.input}
-                    onChange={onChangeUsername}
-                    readonly={readonly}
-                />
-                <Input
-                    placeholder={t('Аватар пользователя')}
-                    value={data?.avatar}
-                    className={cls.input}
-                    onChange={onChangeAvatar}
-                    readonly={readonly}
-                />
-                <CurrencySelect
-                    className={cls.input}
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
-                    readonly={readonly}
-                />
-                <CountrySelect
-                    className={cls.input}
-                    value={data?.country}
-                    onChange={onChangeCountry}
-                    readonly={readonly}
-                />
+                <ColumnFlex align="start">
+                    <Input
+                        placeholder={t('Имя')}
+                        value={data?.first}
+                        className={cls.input}
+                        onChange={onChangeFirstname}
+                        readonly={readonly}
+                    />
+                    <Input
+                        placeholder={t('Фамилия')}
+                        value={data?.lastname}
+                        className={cls.input}
+                        onChange={onChangeLastname}
+                        readonly={readonly}
+                    />
+                    <Input
+                        placeholder={t('Возраст')}
+                        value={data?.age}
+                        className={cls.input}
+                        onChange={onChangeAge}
+                        readonly={readonly}
+                        type="number"
+                    />
+                    <Input
+                        placeholder={t('Город')}
+                        value={data?.city}
+                        className={cls.input}
+                        onChange={onChangeCity}
+                        readonly={readonly}
+                    />
+                    <Input
+                        placeholder={t('Имя пользователя')}
+                        value={data?.username}
+                        className={cls.input}
+                        onChange={onChangeUsername}
+                        readonly={readonly}
+                    />
+                    <Input
+                        placeholder={t('Аватар пользователя')}
+                        value={data?.avatar}
+                        className={cls.input}
+                        onChange={onChangeAvatar}
+                        readonly={readonly}
+                    />
+                    <CurrencySelect
+                        className={cls.input}
+                        value={data?.currency}
+                        onChange={onChangeCurrency}
+                        readonly={readonly}
+                    />
+                    <CountrySelect
+                        className={cls.input}
+                        value={data?.country}
+                        onChange={onChangeCountry}
+                        readonly={readonly}
+                    />
+                </ColumnFlex>
             </div>
         </div>
     );

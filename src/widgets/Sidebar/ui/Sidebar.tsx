@@ -3,6 +3,7 @@ import { memo, useState } from 'react';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher/LanguageSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
+import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { ThemeSwitcher } from '../../ThemeSwitcher/ThemeSwitcher';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';
@@ -19,7 +20,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
     return (
-        <menu
+        <aside
             data-testid="sidebar"
             className={classNames(
                 cls.Sidebar,
@@ -37,7 +38,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <div className={cls.items}>
+            <ColumnFlex role="navigation" gap="8" align="start" className={cls.items}>
                 {sidebarItemList.map((item) => (
                     <SidebarItem
                         key={item.path}
@@ -45,11 +46,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                         item={item}
                     />
                 ))}
-            </div>
+            </ColumnFlex>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LanguageSwitcher short={collapsed} className={cls.lang} />
             </div>
-        </menu>
+        </aside>
     );
 });
