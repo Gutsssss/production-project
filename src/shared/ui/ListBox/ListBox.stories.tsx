@@ -10,6 +10,9 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: '100px' }}><Story /></div>,
+    ],
 } as ComponentMeta<typeof Listbox>;
 
 const Template: ComponentStory<typeof Listbox> = (args) => <Listbox {...args} />;
@@ -30,7 +33,7 @@ export const DirectionTop = Template.bind({});
 DirectionTop.args = {
     label: 'Введите имя',
     defaultValue: 'Привет',
-    direction: 'top',
+    direction: 'bottom left',
     options: [
         { value: '123', content: 'asd' },
         { value: '124', content: 'asd1' },
