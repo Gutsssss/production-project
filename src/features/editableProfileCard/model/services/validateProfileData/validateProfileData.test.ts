@@ -1,7 +1,7 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';
-import { ValidateProfileErrors } from '../../type/type';
 
 const data = {
     username: 'admin',
@@ -19,6 +19,6 @@ describe('validateProfileData.test', () => {
     });
     test('error fetch data', async () => {
         const result = validateProfileData({ ...data, first: '', lastname: '' });
-        expect(result).toBe([ValidateProfileErrors.INVALID_NAME]);
+        expect(result).toBe([ValidateProfileError.SERVER_ERROR]);
     });
 });

@@ -8,6 +8,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
 import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { RowFlex } from 'shared/ui/Stack/RowFlex/RowFlex';
 import { Profile } from '../../model/type/type';
 import cls from './ProfileCard.module.scss';
 
@@ -46,90 +47,86 @@ export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <RowFlex className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </RowFlex>
         );
     }
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <RowFlex className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте перезагрузить страницу')}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </RowFlex>
         );
     }
     const mods:Mods = {
         [cls.editing]: readonly,
     };
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.data}>
-                <div className={cls.avatarWrapper}>
-                    {data?.avatar && <Avatar avatar={data?.avatar} alt={data.avatar} size={150} />}
-                </div>
-                <ColumnFlex align="start">
-                    <Input
-                        placeholder={t('Имя')}
-                        value={data?.first}
-                        className={cls.input}
-                        onChange={onChangeFirstname}
-                        readonly={readonly}
-                    />
-                    <Input
-                        placeholder={t('Фамилия')}
-                        value={data?.lastname}
-                        className={cls.input}
-                        onChange={onChangeLastname}
-                        readonly={readonly}
-                    />
-                    <Input
-                        placeholder={t('Возраст')}
-                        value={data?.age}
-                        className={cls.input}
-                        onChange={onChangeAge}
-                        readonly={readonly}
-                        type="number"
-                    />
-                    <Input
-                        placeholder={t('Город')}
-                        value={data?.city}
-                        className={cls.input}
-                        onChange={onChangeCity}
-                        readonly={readonly}
-                    />
-                    <Input
-                        placeholder={t('Имя пользователя')}
-                        value={data?.username}
-                        className={cls.input}
-                        onChange={onChangeUsername}
-                        readonly={readonly}
-                    />
-                    <Input
-                        placeholder={t('Аватар пользователя')}
-                        value={data?.avatar}
-                        className={cls.input}
-                        onChange={onChangeAvatar}
-                        readonly={readonly}
-                    />
-                    <CurrencySelect
-                        className={cls.input}
-                        value={data?.currency}
-                        onChange={onChangeCurrency}
-                        readonly={readonly}
-                    />
-                    <CountrySelect
-                        className={cls.input}
-                        value={data?.country}
-                        onChange={onChangeCountry}
-                        readonly={readonly}
-                    />
-                </ColumnFlex>
-            </div>
-        </div>
+        <ColumnFlex gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
+            <RowFlex justify="center" className={cls.avatarWrapper}>
+                <Avatar avatar={data?.avatar} alt={data.avatar} size={150} />
+            </RowFlex>
+            <Input
+                placeholder={t('Имя')}
+                value={data?.first}
+                className={cls.input}
+                onChange={onChangeFirstname}
+                readonly={readonly}
+            />
+            <Input
+                placeholder={t('Фамилия')}
+                value={data?.lastname}
+                className={cls.input}
+                onChange={onChangeLastname}
+                readonly={readonly}
+            />
+            <Input
+                placeholder={t('Возраст')}
+                value={data?.age}
+                className={cls.input}
+                onChange={onChangeAge}
+                readonly={readonly}
+                type="number"
+            />
+            <Input
+                placeholder={t('Город')}
+                value={data?.city}
+                className={cls.input}
+                onChange={onChangeCity}
+                readonly={readonly}
+            />
+            <Input
+                placeholder={t('Имя пользователя')}
+                value={data?.username}
+                className={cls.input}
+                onChange={onChangeUsername}
+                readonly={readonly}
+            />
+            <Input
+                placeholder={t('Аватар пользователя')}
+                value={data?.avatar}
+                className={cls.input}
+                onChange={onChangeAvatar}
+                readonly={readonly}
+            />
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readonly}
+            />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
+        </ColumnFlex>
     );
 };

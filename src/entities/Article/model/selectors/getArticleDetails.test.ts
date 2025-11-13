@@ -1,6 +1,6 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StateProvider';
-import { getProfileData } from 'entities/Profile';
+import { getProfileData } from 'features/editableProfileCard';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from '../../model/selectors/getArticleDetails';
 import { ArticleType, ArticleBlockType } from '../types/article';
 

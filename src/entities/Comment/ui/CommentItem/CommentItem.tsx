@@ -5,6 +5,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { Comment } from '../../model/types/Comment';
 import cls from './CommentItem.module.scss';
 
@@ -27,12 +28,12 @@ export const CommentItem = memo(({ className, comment, isLoading }: CommentItemP
         );
     }
     return (
-        <div className={classNames(cls.CommentItem, {}, [className])}>
+        <ColumnFlex gap="8" className={classNames(cls.CommentItem, {}, [className])}>
             <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={cls.header}>
                 {comment?.user?.avatar ? <Avatar className={cls.avatar} size={30} avatar={comment?.user?.avatar} /> : null}
                 <Text title={comment?.user?.username} />
             </AppLink>
             <Text className={cls.commentBody} text={comment?.text} />
-        </div>
+        </ColumnFlex>
     );
 });

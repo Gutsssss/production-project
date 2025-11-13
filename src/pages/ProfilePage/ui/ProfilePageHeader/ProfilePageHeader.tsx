@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
+
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
+import { getProfileData } from 'features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from 'features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from 'features/editableProfileCard/model/services/updateProfileData';
+import { profileActions } from 'features/editableProfileCard/model/slices/ProfileSlice';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {

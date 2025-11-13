@@ -11,7 +11,7 @@ const justifyClasses: Record<JustifyFlex, string> = {
     start: cls.justifyStart,
     end: cls.justifyEnd,
     center: cls.justifyCenter,
-    between: cls.justifyBetweend,
+    between: cls.justifyBetween,
 };
 
 const alignClasses: Record<AlignFlex, string> = {

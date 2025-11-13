@@ -1,5 +1,4 @@
 .CommentItem {
-    width: 100%;
     border: 1px solid var(--primary-color);
     padding: 10px;
     margin-top: 10px;
@@ -8,7 +7,6 @@
 .header {
     display: flex;
     align-items: center;
-    flex-direction: row;
 }
 
 .avatar {
