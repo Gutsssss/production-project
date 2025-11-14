@@ -15,10 +15,10 @@ const data = {
 describe('validateProfileData.test', () => {
     test('success fetch data', async () => {
         const result = validateProfileData(data);
-        expect(result).toBe([]);
+        expect(result).toStrictEqual([]);
     });
     test('error fetch data', async () => {
         const result = validateProfileData({ ...data, first: '', lastname: '' });
-        expect(result).toBe([ValidateProfileError.SERVER_ERROR]);
+        expect(result).toStrictEqual([ValidateProfileError.INCORRECT_USER_DATA]);
     });
 });
