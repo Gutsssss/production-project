@@ -7,3 +7,5 @@ import { getInitedAuthData } from './model/selectors/getInintedAuthData/getInint
 export {
     User, UserSchema, userReducer, userActions, getUserAuthData, ProfileCard, getInitedAuthData,
 };
+
+export { getUserRole, isUserAdmin, isUserManager } from './model/selectors/getUserRole/getUserRoleData';

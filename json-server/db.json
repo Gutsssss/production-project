@@ -596,12 +596,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "roles":["ADMIN"],
       "avatar": "https://avatars.mds.yandex.net/i?id=0a8c5d2f9de0efafee6fd6ae7cb92be86eb82c20-9181478-images-thumbs&n=13"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
+      "roles":["USER"],
+      "avatar": "https://avatars.mds.yandex.net/i?id=0a8c5d2f9de0efafee6fd6ae7cb92be86eb82c20-9181478-images-thumbs&n=13"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles":["MANAGER"],
       "avatar": "https://avatars.mds.yandex.net/i?id=0a8c5d2f9de0efafee6fd6ae7cb92be86eb82c20-9181478-images-thumbs&n=13"
     }
   ],
