@@ -70,7 +70,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <ColumnFlex gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
             <RowFlex justify="center" className={cls.avatarWrapper}>
-                <Avatar avatar={data?.avatar} alt={data.avatar} size={150} />
+                <Avatar avatar={data?.avatar} alt={data?.avatar} size={150} />
             </RowFlex>
             <Input
                 placeholder={t('Имя')}
@@ -78,6 +78,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeFirstname}
                 readonly={readonly}
+                data-testid="ProfileCard.firstname"
             />
             <Input
                 placeholder={t('Фамилия')}
@@ -85,6 +86,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeLastname}
                 readonly={readonly}
+                data-testid="ProfileCard.lastname"
             />
             <Input
                 placeholder={t('Возраст')}
