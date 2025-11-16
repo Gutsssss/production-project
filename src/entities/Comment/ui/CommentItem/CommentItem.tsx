@@ -28,7 +28,7 @@ export const CommentItem = memo(({ className, comment, isLoading }: CommentItemP
         );
     }
     return (
-        <ColumnFlex gap="8" className={classNames(cls.CommentItem, {}, [className])}>
+        <ColumnFlex gap="8" max className={classNames(cls.CommentItem, {}, [className])}>
             <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={cls.header}>
                 {comment?.user?.avatar ? <Avatar className={cls.avatar} size={30} avatar={comment?.user?.avatar} /> : null}
                 <Text title={comment?.user?.username} />

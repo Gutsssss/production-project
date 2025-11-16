@@ -25,7 +25,7 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
     }
     return (
 
-        <ColumnFlex className={classNames('', {}, [className])}>
+        <ColumnFlex justify="center" align="center" max className={classNames('', {}, [className])}>
 
             <Text size={TextSize.L} title={t('Рекомендуем')} />
 

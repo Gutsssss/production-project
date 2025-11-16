@@ -3,6 +3,7 @@ import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
+import { RowFlex } from '../Stack/RowFlex/RowFlex';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
@@ -37,7 +38,7 @@ export const Input = memo((props: InputProps) => {
         [cls.readonly]: readonly,
     };
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <RowFlex gap="8" className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {placeholder}
@@ -53,6 +54,6 @@ export const Input = memo((props: InputProps) => {
                 onFocus={onFocus}
                 {...otherProps}
             />
-        </div>
+        </RowFlex>
     );
 });

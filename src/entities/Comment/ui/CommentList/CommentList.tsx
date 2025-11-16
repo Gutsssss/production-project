@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { t } from 'i18next';
+import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { Comment } from '../../model/types/Comment';
 import cls from './CommentList.module.scss';
 import { CommentItem } from '../CommentItem/CommentItem';
@@ -13,7 +14,7 @@ interface CommentListProps {
 }
 
 export const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => (
-    <div className={classNames(cls.CommentList, {}, [className])}>
+    <ColumnFlex max gap="8" className={classNames(cls.CommentList, {}, [className])}>
         {comments.length
             ? comments?.map((comment) => (
                 <CommentItem
@@ -22,5 +23,5 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
                     comment={comment}
                 />
             )) : <Text text={t('Список комментариев пуст')} />}
-    </div>
+    </ColumnFlex>
 ));

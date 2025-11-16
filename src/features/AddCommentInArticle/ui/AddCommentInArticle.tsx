@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { AddNewComment } from 'entities/Comment/ui/AddNewComment/AddNewComment';
 import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
 import { addCommentFormReducer } from 'entities/Comment';
+import { RowFlex } from 'shared/ui/Stack/RowFlex/RowFlex';
 
 interface addCommentInArticleProps {
   className?: string;
@@ -14,8 +15,8 @@ const reducers:ReducerList = {
 export const AddCommentInArticle = memo(({ className, onSend }: addCommentInArticleProps) => {
     useAcyncReducer({ reducers });
     return (
-        <div className={classNames('', {}, [className])}>
+        <RowFlex max align="center" className={classNames('', {}, [className])}>
             <AddNewComment onSend={onSend} />
-        </div>
+        </RowFlex>
     );
 });

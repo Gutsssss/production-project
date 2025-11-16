@@ -47,14 +47,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
-            <RowFlex className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <RowFlex max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
             </RowFlex>
         );
     }
     if (error) {
         return (
-            <RowFlex className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <RowFlex max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -68,7 +68,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         [cls.editing]: readonly,
     };
     return (
-        <ColumnFlex gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
+        <ColumnFlex gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
             <RowFlex justify="center" className={cls.avatarWrapper}>
                 <Avatar avatar={data?.avatar} alt={data?.avatar} size={150} />
             </RowFlex>

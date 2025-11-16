@@ -33,10 +33,10 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
         dispatch(updateProfileData());
     }, [dispatch]);
     return (
-        <RowFlex className={classNames('', {}, [className])}>
+        <RowFlex max gap="8" className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
-                <div>
+                <RowFlex gap="8">
                     {readonly ? (
                         <Button
                             onClick={onEdit}
@@ -63,7 +63,7 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
                             </Button>
                         </>
                     )}
-                </div>
+                </RowFlex>
             )}
         </RowFlex>
     );
