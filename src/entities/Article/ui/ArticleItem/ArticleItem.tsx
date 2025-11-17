@@ -9,8 +9,10 @@ import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleBlockType, ArticleView } from 'entities/Article/model/consts/ArticleConsts';
+
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
 import cls from './ArticleItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

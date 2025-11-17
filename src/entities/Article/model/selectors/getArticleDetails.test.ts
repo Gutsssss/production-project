@@ -1,7 +1,8 @@
 import { StateSchema } from 'app/providers/StateProvider';
 import { getProfileData } from 'features/editableProfileCard';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from '../../model/selectors/getArticleDetails';
-import { ArticleType, ArticleBlockType } from '../types/article';
+import { ArticleType } from '../types/article';
+import { ArticleBlockType } from '../consts/ArticleConsts';
 
 describe('getArticleDetails.test', () => {
     test('get data', () => {

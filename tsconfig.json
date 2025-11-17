@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations":"6.0",
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "esnext",
@@ -7,6 +8,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
+    "isolatedModules": true,
     "baseUrl": ".",
     // "strict": true,
     "paths": {

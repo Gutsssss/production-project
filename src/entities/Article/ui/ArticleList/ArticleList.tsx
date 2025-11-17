@@ -6,7 +6,8 @@ import {
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from 'entities/Article/model/consts/ArticleConsts';
+import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';

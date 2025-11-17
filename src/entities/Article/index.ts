@@ -1,5 +1,5 @@
-export { Article, ArticleView, ArtcileSortField } from './model/types/article';
-export { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
+export { ArticleView, ArtcileSortField } from './model/consts/ArticleConsts';
+export type{ ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
 export { articleDetailsReducer, articleDetailsActions } from './model/slice/ArticleSlice';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export {
@@ -12,3 +12,4 @@ export { ArticleItem } from './ui/ArticleItem/ArticleItem';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export { ArticleTypeTab } from './ui/ArticleTypeTab/ArticleTypeTab';
+export type { Article } from './model/types/article';

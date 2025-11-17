@@ -1,24 +1,9 @@
 import { User } from 'entities/User';
-
-export enum ArtcileSortField {
-    VIEWS = 'views',
-    TITLE = 'title',
-    CREATED = 'createdAt'
-}
-
-export enum ArticleBlockType {
-    CODE = 'CODE',
-    TEXT = 'TEXT',
-    IMAGE = 'IMAGE'
-}
+import { ArticleBlockType } from '../consts/ArticleConsts';
 
 export interface ArticelBlcokBase {
     id:string
     type:ArticleBlockType
-}
-export enum ArticleView {
-    BIG_PLATE = 'BIG_PLATE',
-    SMALL_PLATE = 'SMALL_PLATE',
 }
 export interface ArticleTextBlock extends ArticelBlcokBase {
     type:ArticleBlockType.TEXT

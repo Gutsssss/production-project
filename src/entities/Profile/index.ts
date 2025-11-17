@@ -1,5 +1,5 @@
 import { Profile } from './model/type/type';
 
-export {
+export type {
     Profile,
 };

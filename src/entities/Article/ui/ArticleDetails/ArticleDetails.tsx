@@ -17,7 +17,8 @@ import {
     getArticleDetailsError,
     getArticleDetailsLoading,
 } from '../../model/selectors/getArticleDetails';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleBlockType } from 'entities/Article/model/consts/ArticleConsts';
 import { articleDetailsReducer } from '../../../Article/model/slice/ArticleSlice';
 import cls from './ArticleDetails.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

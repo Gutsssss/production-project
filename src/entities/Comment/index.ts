@@ -1,4 +1,4 @@
-export { Comment } from './model/types/Comment';
+export type { Comment } from './model/types/Comment';
 export { CommentItem } from './ui/CommentItem/CommentItem';
 export { CommentList } from './ui/CommentList/CommentList';
 export { addCommentFormReducer } from './model/slice/AddCommentSlice';
