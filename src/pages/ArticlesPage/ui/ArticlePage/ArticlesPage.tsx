@@ -47,9 +47,15 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
         );
     }
     return (
-        <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
+        <Page className={classNames(cls.ArticlesPage, {}, [className])}>
             <ArticlePageFilters />
-            <ArticleList className={cls.list} articles={articles} view={view} isLoading={isLoading} />
+            <ArticleList
+                className={cls.list}
+                articles={articles}
+                view={view}
+                isLoading={isLoading}
+                loadNextPart={onLoadNextPart}
+            />
         </Page>
     );
 };

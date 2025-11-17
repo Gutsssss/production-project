@@ -1,5 +1,4 @@
 import {
-    CombinedState,
     configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CounterReducer } from 'entities/Counter';
@@ -26,7 +25,7 @@ export function createReduxStore(
         api: $api,
     };
     const store = configureStore({
-        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
+        reducer: reducerManager.reduce as Reducer<StateSchema>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

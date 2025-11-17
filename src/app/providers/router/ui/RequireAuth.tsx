@@ -25,8 +25,6 @@ export function RequireAuth({ children, roles }:RequireAuthProps) {
             return hasRole;
         });
     }, [roles, userRoles]);
-    console.log(userRoles);
-    console.log(hasRequiredRoles);
     if (!auth) {
     // Redirect them to the /login page, but save the current location they were
     // trying to go to when they were redirected. This allows us to send them

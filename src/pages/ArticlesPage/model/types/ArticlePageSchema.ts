@@ -3,7 +3,7 @@ import { Article, ArticleView } from 'entities/Article';
 import { ArtcileSortField, ArticleType } from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/types/SortOrder';
 
-export interface ArticlePageSchema extends EntityState<Article> {
+export interface ArticlePageSchema extends EntityState<Article, string> {
     isLoading?:boolean;
     error?:string;
     view?:ArticleView;

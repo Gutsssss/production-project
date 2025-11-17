@@ -1,11 +1,11 @@
-import { Reducer } from '@reduxjs/toolkit';
+import { Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager } from 'app/providers/StateProvider';
 import { StateSchemaKey } from 'app/providers/StateProvider/config/StateSchema';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducerList = {
-    [name in StateSchemaKey]?: Reducer
+    [name in StateSchemaKey]?: ReducersMapObject<any> | Reducer<any>
 }
 
 interface useAsyncReducerProps {
