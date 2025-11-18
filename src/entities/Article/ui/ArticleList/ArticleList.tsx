@@ -6,7 +6,7 @@ import {
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { ArticleView } from 'entities/Article/model/consts/ArticleConsts';
+import { ArticleView } from '../../model/consts/ArticleConsts';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
@@ -18,7 +18,7 @@ interface ArticleListProps {
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
   isLoading?: boolean;
-  loadNextPart?:() => void
+  loadNextPart?:() => void,
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL_PLATE ? 9 : 3)
@@ -52,7 +52,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <div style={{
             padding: '1rem',
             textAlign: 'center',
-            background: '#f5f5f5',
         }}
         >
             {isLoading ?? getSkeletons(view)}
@@ -67,6 +66,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     title={t('Статьи не найдены')}
                     align={TextAlign.CENTER}
                 />
+            </div>
+        );
+    }
+    if (isLoading && articles.length === 0) {
+        return (
+            <div className={cls.ArticleList}>
+                {getSkeletons(view)}
             </div>
         );
     }
