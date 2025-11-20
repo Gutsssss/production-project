@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -632,8 +666,8 @@
       "first": "Мотяк",
       "lastname": "Мастерских",
       "age": 24,
-      "currency": "USD",
-      "country": "German",
+      "currency": "EUR",
+      "country": "America",
       "city": "Tymen",
       "username": "Areuss",
       "avatar": "https://avatars.mds.yandex.net/i?id=0a8c5d2f9de0efafee6fd6ae7cb92be86eb82c20-9181478-images-thumbs&n=13"

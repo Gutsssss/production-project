@@ -3,8 +3,8 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
-import { Button, ButtonTheme } from '../Button/Button';
-import { RowFlex } from '../Stack/RowFlex/RowFlex';
+import { RowFlex } from '../../../Stack/RowFlex/RowFlex';
+import popupCls from '../../styles/styles.module.scss';
 
 export interface ListOptions {
     value:string,
@@ -30,7 +30,7 @@ export interface ListBoxProps {
     direction?:DropdownDirection
 }
 
-export function Listbox(props:ListBoxProps) {
+export const Listbox = (props:ListBoxProps) => {
     const {
         className, value, label, onChange, defaultValue, options, readonly, direction = 'bottom left',
     } = props;
@@ -45,11 +45,11 @@ export function Listbox(props:ListBoxProps) {
             <HListBox
                 as="div"
                 disabled={readonly}
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(popupCls.popup, {}, [className])}
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button as={Button!} theme={ButtonTheme.OUTLINE}>
+                <HListBox.Button className={popupCls.trigger}>
                     {value ?? defaultValue}
                 </HListBox.Button>
                 <HListBox.Options className={classNames('', {}, classess)}>
@@ -83,4 +83,4 @@ export function Listbox(props:ListBoxProps) {
             </HListBox>
         </RowFlex>
     );
-}
+};

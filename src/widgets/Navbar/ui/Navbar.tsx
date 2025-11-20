@@ -4,15 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
 } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { RowFlex } from 'shared/ui/Stack/RowFlex/RowFlex';
+import { OpenNotificationsButton } from 'features/OpenNotificationsButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -22,20 +23,13 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const { t } = useTranslation();
-    const dispatch = useDispatch();
     const authdata = useSelector(getUserAuthData);
-    const isAdmin = useSelector(isUserAdmin);
-    const isManager = useSelector(isUserManager);
     const onOpenModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-    }, [dispatch]);
-    const isAdminPanelAvailable = isAdmin || isManager;
     if (authdata) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
@@ -43,16 +37,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 <AppLink to={RouterPath.article_create} theme={AppLinkTheme.SECONDARY}>
                     {t('Создать статью')}
                 </AppLink>
-                <Dropdown
-                    direction="bottom left"
-                    className={cls.dropdown}
-                    items={[
-                        ...(isAdminPanelAvailable ? [{ content: 'Админ', href: RouterPath.admin_panel }] : []),
-                        { content: 'Профиль', href: RouterPath.profile + authdata.id },
-                        { content: 'Выйти', onCLick: onLogout },
-                    ]}
-                    trigger={<Avatar size={40} avatar={authdata.avatar} />}
-                />
+                <RowFlex gap="16" className={cls.actions}>
+                    <OpenNotificationsButton />
+                    <AvatarDropdown />
+                </RowFlex>
             </header>
         );
     }

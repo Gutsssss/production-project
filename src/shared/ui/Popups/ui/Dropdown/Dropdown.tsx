@@ -3,7 +3,9 @@ import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 import cls from './Dropdown.module.scss';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/const';
+import popupCls from '../../styles/styles.module.scss';
 
 export interface ItemsDropdown {
     disabled?:boolean
@@ -18,28 +20,23 @@ interface DropdownProps {
     trigger:ReactNode;
     direction?:DropdownDirection
 }
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'top left': cls.optionTopLeft,
-    'top right': cls.optionTopRight,
-    'bottom left': cls.optionBottomLeft,
-    'bottom right': cls.optionBottomRight,
-};
 
-export function Dropdown(props :DropdownProps) {
+export const Dropdown = (props :DropdownProps) => {
     const {
         className, items, trigger, direction,
     } = props;
     const classess = [mapDirectionClass[direction]];
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>
+        <Menu as="div" className={classNames(popupCls.popup, {}, [className])}>
+            <Menu.Button className={popupCls.trigger}>
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, classess)}>
-                {items?.map((item) => {
+                {items?.map((item, index) => {
                     const content = ({ active }:{active:boolean}) => (
                         // eslint-disable-next-line i18next/no-literal-string
                         <button
+                            key={index}
                             disabled={item.disabled}
                             type="button"
                             onClick={item.onCLick}
@@ -50,13 +47,13 @@ export function Dropdown(props :DropdownProps) {
                     );
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item key={index} as={AppLink} to={item.href} disabled={item.disabled}>
                                 {content}
                             </Menu.Item>
                         );
                     }
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     );
@@ -65,4 +62,4 @@ export function Dropdown(props :DropdownProps) {
             </Menu.Items>
         </Menu>
     );
-}
+};
