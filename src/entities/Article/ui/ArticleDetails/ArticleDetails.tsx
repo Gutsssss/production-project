@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
-import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { ReducerList, useAcyncReducer } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
@@ -11,6 +11,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import ViewIcon from 'shared/assets/icons/eye_icon.svg';
 import CalendarIcon from 'shared/assets/icons/calendar_icon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlockType } from '../../model/consts/ArticleConsts';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import {
     getArticleDetailsData,
@@ -18,7 +19,6 @@ import {
     getArticleDetailsLoading,
 } from '../../model/selectors/getArticleDetails';
 import { ArticleBlock } from '../../model/types/article';
-import { ArticleBlockType } from 'entities/Article/model/consts/ArticleConsts';
 import { articleDetailsReducer } from '../../../Article/model/slice/ArticleSlice';
 import cls from './ArticleDetails.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

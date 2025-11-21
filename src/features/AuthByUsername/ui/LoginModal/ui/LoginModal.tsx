@@ -16,7 +16,7 @@ export const LoginModal = (props: LoginModalProps) => {
     return (
         <Modal
             isOpen={isOpen}
-            onCLose={onClose}
+            onClose={onClose}
             className={classNames(cls.LoginModal, {}, [className])}
             lazy
         >

@@ -7,8 +7,8 @@ import {
     memo, useCallback,
 } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
-import { type ReducerList } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { useAcyncReducer } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
+import { type ReducerList } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import { getLoginUsername } from '../../../model/selectors/getLoginUsername/getLoginUsername';

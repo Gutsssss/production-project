@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { ReducerList, useAcyncReducer } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { Page } from 'widgets/Page/Page';
 import { ArticleRecommendationList } from 'features/articleRecommendationList';
 import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';

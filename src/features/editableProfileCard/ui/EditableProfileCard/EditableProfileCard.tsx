@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { ReducerList, useAcyncReducer } from 'shared/lib/useAsyncReducer/useAcyncReducer';
+import { ReducerList, useAcyncReducer } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 

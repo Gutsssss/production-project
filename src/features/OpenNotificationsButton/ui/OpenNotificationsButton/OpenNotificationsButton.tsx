@@ -6,7 +6,7 @@ import { Popover } from 'shared/ui/Popups';
 import { NotificationList } from 'entities/Notifications';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { AnimationProvider } from 'shared/lib/ui/AnimationProvider';
 import cls from './OpenNotificationsButton.module.scss';
 
 interface OpenNotificationsButtonProps {
@@ -24,21 +24,20 @@ export const OpenNotificationsButton = memo((props: OpenNotificationsButtonProps
     }, []);
     const isMobile = useDevice();
     const trigger = (
-        <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-            <Icon Svg={NotificationIcon} inverted />
-        </Button>
+        <Icon onOpen={onOpenDrawer} Svg={NotificationIcon} inverted />
     );
     return (
         <div>
             {isMobile ? (
-                <>
+                <AnimationProvider>
                     {trigger}
                     <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                         <NotificationList />
                     </Drawer>
-                </>
+                </AnimationProvider>
             ) : (
                 <Popover
+                    onClose={onCloseDrawer}
                     direction="bottom left"
                     className={classNames(cls.OpenNotificationsButton, {}, [className])}
                     trigger={trigger}
