@@ -12,7 +12,7 @@
     "baseUrl": ".",
     // "strict": true,
     "paths": {
-      "*":["./src/*"]
+      "@/*":["./src/*"]
     },
     //позволяет использовать обычне импорты вместо commonJs - (require() module.export)
     "esModuleInterop": true,

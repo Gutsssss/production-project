@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { ReducerList, useAcyncReducer } from 'shared/lib/hooks/useAsyncReducer/useAcyncReducer';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 import { t } from 'i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInintinalEffect } from 'shared/lib/hooks/useInintialEffect/useInintialEffect';
-import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
-import { ProfileCard } from 'entities/User';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
+import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { ProfileCard } from '@/entities/User';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';

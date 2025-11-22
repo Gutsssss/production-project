@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StateProvider';
+import { StateSchema } from '@/app/providers/StateProvider';
 import { getCounter } from './getCounter';
 
 describe('getCounter', () => {

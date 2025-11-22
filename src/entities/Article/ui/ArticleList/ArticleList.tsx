@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     HTMLAttributeAnchorTarget, memo, useCallback,
 } from 'react';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { ArticleView } from '../../model/consts/ArticleConsts';

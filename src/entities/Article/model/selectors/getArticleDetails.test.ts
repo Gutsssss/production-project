@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StateProvider';
-import { getProfileData } from 'features/editableProfileCard';
+import { StateSchema } from '@/app/providers/StateProvider';
+import { getProfileData } from '@/features/editableProfileCard';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from '../../model/selectors/getArticleDetails';
 import { ArticleType } from '../types/article';
 import { ArticleBlockType } from '../consts/ArticleConsts';

@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     MutableRefObject, ReactNode, useRef, UIEvent,
 } from 'react';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfinitieScroll/useInfinitieScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getScrollSaveByPath, saveScrollActions } from 'features/ScrollSave';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfinitieScroll/useInfinitieScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getScrollSaveByPath, saveScrollActions } from '@/features/ScrollSave';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StateProvider';
-import { useInintinalEffect } from 'shared/lib/hooks/useInintialEffect/useInintialEffect';
-import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { StateSchema } from '@/app/providers/StateProvider';
+import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 
 interface PageProps {

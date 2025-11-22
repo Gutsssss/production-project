@@ -1,4 +1,4 @@
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { Notification } from '../model/Notification';
 
 // NOTE: these are the _SAME_ API reference!

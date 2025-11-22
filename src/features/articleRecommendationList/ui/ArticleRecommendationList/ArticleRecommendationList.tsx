@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
 
 import { memo } from 'react';
 
-import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
-import { ArticleList } from 'entities/Article';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { ArticleList } from '@/entities/Article';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationApi';
 
 interface ArticleRecommendationListProps {

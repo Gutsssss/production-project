@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Page } from 'widgets/Page/Page';
-import { ColumnFlex } from 'shared/ui/Stack/ColumnFlex/ColumnFlex';
-import { EditableProfileCard } from 'features/editableProfileCard';
+import { Page } from '@/widgets/Page/Page';
+import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 
 interface ProfilePageProps {

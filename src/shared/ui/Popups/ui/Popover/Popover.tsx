@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
-import { DropdownDirection } from 'shared/types/ui';
+import { DropdownDirection } from '@/shared/types/ui';
 import cls from './Popover.module.scss';
 import { mapDirectionClass } from '../../styles/const';
 import popupCls from '../../styles/styles.module.scss';
