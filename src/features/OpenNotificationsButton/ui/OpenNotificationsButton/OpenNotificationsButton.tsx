@@ -6,7 +6,6 @@ import { Popover } from '@/shared/ui/Popups';
 import { NotificationList } from '@/entities/Notifications';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { AnimationProvider } from '@/shared/lib/ui/AnimationProvider';
 import cls from './OpenNotificationsButton.module.scss';
 
 interface OpenNotificationsButtonProps {
@@ -29,12 +28,12 @@ export const OpenNotificationsButton = memo((props: OpenNotificationsButtonProps
     return (
         <div>
             {isMobile ? (
-                <AnimationProvider>
+                <>
                     {trigger}
                     <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                         <NotificationList />
                     </Drawer>
-                </AnimationProvider>
+                </>
             ) : (
                 <Popover
                     onClose={onCloseDrawer}
