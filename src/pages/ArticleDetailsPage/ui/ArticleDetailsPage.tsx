@@ -1,7 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { Page } from '@/widgets/Page/Page';
 import { ArticleRecommendationList } from '@/features/articleRecommendationList';
@@ -10,6 +10,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
 import { articleDetailsPageReducer } from '../model/slice';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
 
@@ -32,6 +33,7 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <ColumnFlex gap="16" max>
                 <ArticleDetailsHeader />
                 <ArticleDetails id={id} />
+                <ArticleRating articleId={id} />
                 <ArticleRecommendationList />
                 <ArticleDetailsComments id={id} />
             </ColumnFlex>

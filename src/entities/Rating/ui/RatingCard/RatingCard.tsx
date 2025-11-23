@@ -20,6 +20,7 @@ interface RatingCardProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?:number
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -30,15 +31,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
         hasFeedback,
         onCancel,
         title,
+        rate = 0,
     } = props;
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((selectedStarsCount: number) => {
         setStarsCount(selectedStarsCount);
-        if (!hasFeedback) {
+        if (hasFeedback) {
             setIsModalOpen(true);
         } else {
             onAccept?.(selectedStarsCount);
@@ -64,12 +66,13 @@ export const RatingCard = memo((props: RatingCardProps) => {
             <Input
                 value={feedback}
                 placeholder={t('Ваш отзыв')}
+                onChange={() => setFeedback}
             />
         </>
     );
 
     return (
-        <Card className={classNames(cls.RatingCard, {}, [className])}>
+        <Card fullWidth className={classNames(cls.RatingCard, {}, [className])}>
             <ColumnFlex align="center" gap="8">
                 <Text title={title} />
                 <Stars

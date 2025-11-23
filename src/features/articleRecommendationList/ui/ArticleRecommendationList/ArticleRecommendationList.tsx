@@ -1,8 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-
 import { useTranslation } from 'react-i18next';
 
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { ArticleList } from '@/entities/Article';

@@ -683,5 +683,34 @@
       "username": "Sane4ka",
       "avatar": "https://i.pinimg.com/originals/a9/7d/ed/a97ded12d162e93c6dc932e9ae975a64.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "feedback": "Хорошая статья",
+      "rate": 4,
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "feedback": "Хорошая статья",
+      "rate": 4,
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "reate": 5,
+      "id": "zaVPQk_"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "reate": 5,
+      "feedback": "",
+      "id": "SEpAuMd"
+    }
   ]
 }
