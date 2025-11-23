@@ -702,15 +702,31 @@
     {
       "userId": "1",
       "articleId": "3",
-      "reate": 5,
+      "rate": 5,
       "id": "zaVPQk_"
     },
     {
       "userId": "1",
       "articleId": "3",
-      "reate": 5,
+      "rate": 5,
       "feedback": "",
       "id": "SEpAuMd"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "profileId": "1",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "",
+      "id": 1
+    },
+    {
+      "profileId": "2",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "",
+      "id": 2
     }
   ]
 }

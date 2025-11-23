@@ -74,7 +74,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     return (
         <Card fullWidth className={classNames(cls.RatingCard, {}, [className])}>
             <ColumnFlex align="center" gap="8">
-                <Text title={title} />
+                <Text title={starsCount ? t('Спасибо за отзыв') : title} />
                 <Stars
                     size={40}
                     onSelect={onSelectStars}

@@ -1,1 +1,1 @@
-export { ArticleRating } from './ui/ArticleRating';
+export { ArticleRatingLazy as ArticleRating } from './ui/ArticleRating.lazy';

@@ -6,7 +6,7 @@ import { useGetArticleRating, useRateArticle } from '../api/ArticleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
-interface ArticleRaiingProps {
+export interface ArticleRaiingProps {
   className?: string;
   articleId:string;
 }
@@ -23,7 +23,7 @@ export const ArticleRating = memo((props: ArticleRaiingProps) => {
             rateArticleMutation({
                 userId: userData?.id ?? '',
                 articleId,
-                reate: starsCount,
+                rate: starsCount,
                 feedback,
 
             });

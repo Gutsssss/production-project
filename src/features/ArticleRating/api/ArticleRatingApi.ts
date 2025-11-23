@@ -6,7 +6,7 @@ interface getArticleRating {
     userId:string,
 }
 interface rateArticleProps {
-    reate:number,
+    rate:number,
     articleId:string,
     feedback?:string,
     userId:string
