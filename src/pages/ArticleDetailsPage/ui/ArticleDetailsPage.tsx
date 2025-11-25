@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
-import { Page } from '@/widgets/Page/Page';
 import { ArticleRecommendationList } from '@/features/articleRecommendationList';
 import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
 import cls from './ArticleDetailsPage.module.scss';
@@ -11,6 +10,7 @@ import { ArticleDetailsHeader } from './ArticleDetailsPageHeader/ArticleDetailsP
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
 import { articleDetailsPageReducer } from '../model/slice';
 import { ArticleRating } from '@/features/ArticleRating';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
 

@@ -57,6 +57,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'areuss-plugin/imports-from-public-api': ['error', { alias: '@' }],
         'areuss-plugin/areuss-path-checker': 'error',
     },
     globals: {
@@ -70,6 +71,21 @@ module.exports = {
             rules: {
                 'i18next/no-literal-string': 'off',
                 'max-len': 'off',
+            },
+        },
+        {
+            files: ['.storybook/**/*.@(js|jsx|ts|tsx)'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+        {
+            files: ['src/stories/**/*.@(js|jsx|ts|tsx)'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'react/no-unescaped-entities': 'off',
+                'max-len': 'off',
+                'no-redeclare': 'off',
             },
         },
     ],

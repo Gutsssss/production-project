@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ArticleView, ArticleBlockType } from '@/entities/Article/model/consts/ArticleConsts';
 import { ArticleType } from '../../model/types/article';
 
 import { ArticleList } from './ArticleList';
+import { ArticleBlockType, ArticleView } from '../../model/consts/ArticleConsts';
 
 export default {
     title: 'entities/ArticleList',

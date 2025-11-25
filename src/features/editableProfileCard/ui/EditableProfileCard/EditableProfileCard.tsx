@@ -1,11 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
+import { t } from 'i18next';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
-import { t } from 'i18next';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';

@@ -1,8 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { AddNewComment } from '@/entities/Comment/ui/AddNewComment/AddNewComment';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
-import { addCommentFormReducer } from '@/entities/Comment';
+import { addCommentFormReducer, AddNewComment } from '@/entities/Comment';
 import { RowFlex } from '@/shared/ui/Stack/RowFlex/RowFlex';
 
 interface addCommentInArticleProps {

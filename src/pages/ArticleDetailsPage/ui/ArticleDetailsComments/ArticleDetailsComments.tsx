@@ -1,11 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
 import { addCommentForArticle, CommentList } from '@/entities/Comment';
 import { AddCommentInArticle } from '@/features/AddCommentInArticle';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { getArticleDetailsCommentsLoading } from

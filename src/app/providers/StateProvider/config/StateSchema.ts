@@ -5,7 +5,6 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from '@/entities/Article';
-import { AddCommentSchema } from '@/entities/Comment/model/types/AddCommentSchema';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
@@ -14,6 +13,7 @@ import { ScrollSaveSchema } from '@/features/ScrollSave';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { AddCommentSchema } from '@/entities/Comment';
 
 export interface StateSchema {
     counter:CounterSchema

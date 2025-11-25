@@ -1,8 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/Text/Text';

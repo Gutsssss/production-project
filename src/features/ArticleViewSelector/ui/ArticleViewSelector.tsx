@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '@/entities/Article';
 import BigPlate from '@/shared/assets/icons/big-plate.svg';
 import SmallPlate from '@/shared/assets/icons/small-plate.svg';

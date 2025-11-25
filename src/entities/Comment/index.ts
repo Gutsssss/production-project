@@ -5,3 +5,4 @@ export { addCommentFormReducer } from './model/slice/AddCommentSlice';
 export { getAddCommentFormText, getAddCommentFormError } from './model/selectors/getAddCommentFormSelectors';
 export { addCommentForArticle } from './model/services/addNewComment';
 export { AddNewCommentFormLazy as AddNewComment } from './ui/AddNewComment/AddNewComment.lazy';
+export type { AddCommentSchema } from './model/types/AddCommentSchema';
