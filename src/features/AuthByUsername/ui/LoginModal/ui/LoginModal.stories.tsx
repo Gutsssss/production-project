@@ -2,9 +2,9 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StateDecorator } from '@/shared/config/storybook/StateDecorator/StateDecorator';
 import { LoginModal } from './LoginModal';
+import { Theme } from '@/shared/lib/context/ThemeContext';
 
 export default {
     title: 'feaqtures/LoginModal',

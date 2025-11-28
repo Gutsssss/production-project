@@ -5,7 +5,7 @@ import {
     getUserAuthData, getUserRole,
     UserRole,
 } from '@/entities/User';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { RouterPath } from '@/shared/const/router';
 
 interface RequireAuthProps {
     children: JSX.Element,

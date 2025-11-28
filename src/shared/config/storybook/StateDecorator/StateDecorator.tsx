@@ -1,11 +1,12 @@
+/* eslint-disable areuss-plugin/layer-imports */
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
-import { StateSchema, StoreProvider } from '@/app/providers/StateProvider';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { loginReducer } from '@/features/AuthByUsername';
 import { articleDetailsReducer } from '@/entities/Article';
+import { profileReducer } from '@/features/editableProfileCard';
 import { addCommentFormReducer } from '@/entities/Comment';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
-import { profileReducer } from '@/features/editableProfileCard';
-import { loginReducer } from '@/features/AuthByUsername';
 
 const defaultAsyncReducers:DeepPartial<ReducersMapObject<StateSchema>> = {
     loginForm: loginReducer,

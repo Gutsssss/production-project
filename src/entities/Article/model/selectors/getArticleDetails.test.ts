@@ -1,8 +1,9 @@
-import { StateSchema } from '@/app/providers/StateProvider';
+// eslint-disable-next-line areuss-plugin/layer-imports
 import { getProfileData } from '@/features/editableProfileCard';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from '../../model/selectors/getArticleDetails';
 import { ArticleType } from '../types/article';
 import { ArticleBlockType } from '../consts/ArticleConsts';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getArticleDetails.test', () => {
     test('get data', () => {

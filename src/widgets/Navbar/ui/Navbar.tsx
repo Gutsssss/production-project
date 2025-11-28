@@ -10,7 +10,7 @@ import {
 } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { RouterPath } from '@/shared/const/router';
 import { RowFlex } from '@/shared/ui/Stack/RowFlex/RowFlex';
 import { OpenNotificationsButton } from '@/features/OpenNotificationsButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';

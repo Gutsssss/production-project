@@ -3,7 +3,6 @@ import {
     createSlice, PayloadAction,
 } from '@reduxjs/toolkit';
 
-import { StateSchema } from '@/app/providers/StateProvider';
 import {
     ArtcileSortField, Article, ArticleView,
     ArticleType,
@@ -13,6 +12,7 @@ import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types/SortOrder';
 import { ArticlePageSchema } from '../types/ArticlePageSchema';
 import { fetchArticleList } from '../services/fetchArticleList';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 const articlesPageAdapter = createEntityAdapter<Article>();
 

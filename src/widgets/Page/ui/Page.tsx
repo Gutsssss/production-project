@@ -7,10 +7,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfinitieScroll/useInfinitieScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getScrollSaveByPath, saveScrollActions } from '@/features/ScrollSave';
-import { StateSchema } from '@/app/providers/StateProvider';
 import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 interface PageProps {
   className?: string;

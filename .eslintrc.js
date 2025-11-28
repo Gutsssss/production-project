@@ -59,6 +59,10 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'areuss-plugin/imports-from-public-api': ['error', { alias: '@' }],
         'areuss-plugin/areuss-path-checker': 'error',
+        'areuss-plugin/layer-imports': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider'],
+        }],
     },
     globals: {
         __IS_DEV__: true,

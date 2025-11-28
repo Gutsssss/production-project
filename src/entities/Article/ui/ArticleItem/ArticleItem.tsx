@@ -7,7 +7,7 @@ import { Icon } from '@/shared/ui/Icon/Icon';
 import ViewIcon from '@/shared/assets/icons/eye_icon.svg';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button } from '@/shared/ui/Button/Button';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { RouterPath } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 import {
