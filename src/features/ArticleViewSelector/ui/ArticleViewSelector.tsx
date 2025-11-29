@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '@/entities/Article';
 import BigPlate from '@/shared/assets/icons/big-plate.svg';
 import SmallPlate from '@/shared/assets/icons/small-plate.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewProps {

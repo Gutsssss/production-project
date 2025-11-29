@@ -5,12 +5,12 @@ import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     Text, TextAlign, TextSize, TextTheme,
-} from '@/shared/ui/Text/Text';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+} from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
 import ViewIcon from '@/shared/assets/icons/eye_icon.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar_icon.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleBlockType } from '../../model/consts/ArticleConsts';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import {

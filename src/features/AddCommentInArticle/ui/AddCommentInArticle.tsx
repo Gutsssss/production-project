@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { addCommentFormReducer, AddNewComment } from '@/entities/Comment';
-import { RowFlex } from '@/shared/ui/Stack/RowFlex/RowFlex';
+import { RowFlex } from '@/shared/ui/Stack';
 
 interface addCommentInArticleProps {
   className?: string;

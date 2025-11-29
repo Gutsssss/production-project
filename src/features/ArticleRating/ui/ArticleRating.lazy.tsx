@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { ArticleRaiingProps } from './ArticleRating';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 const ArticleRatingAsync = lazy(() => import('./ArticleRating')
     .then((module) => ({

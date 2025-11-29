@@ -8,8 +8,8 @@ import { Currency } from '@/entities/Currency';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
-import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { ColumnFlex } from '@/shared/ui/Stack';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';

@@ -4,7 +4,7 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '../../model/consts/ArticleConsts';
 import { Article } from '../../model/types/article';

@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { ColumnFlex } from '@/shared/ui/Stack';
 import { ArticleList } from '@/entities/Article';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationApi';
 
 interface ArticleRecommendationListProps {

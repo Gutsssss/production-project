@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { ArticleRecommendationList } from '@/features/articleRecommendationList';
-import { ColumnFlex } from '@/shared/ui/Stack/ColumnFlex/ColumnFlex';
+import { ColumnFlex } from '@/shared/ui/Stack';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
