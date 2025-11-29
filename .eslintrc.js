@@ -20,6 +20,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'areuss-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -31,6 +32,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'no-unused-vars': 0,
         '@typescript-eslint/no-unused-vars': 2,
         'react/require-default-props': 'off',
