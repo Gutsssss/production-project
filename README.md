@@ -43,7 +43,6 @@ npm run start:dev:server - запуск json-server с нашей бд;
 
 ## Сущности
 
-```
  - [Article](/src/entities/Article)
  - [Comment](/src/entities/Comment)
  - [Country](/src/entities/Country)
@@ -52,5 +51,4 @@ npm run start:dev:server - запуск json-server с нашей бд;
  - [Profile](/src/entities/Profile)
  - [Rating](/src/entities/Rating)
  - [User](/src/entities/User/) 
-```
 -----
