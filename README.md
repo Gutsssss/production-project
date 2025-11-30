@@ -8,10 +8,9 @@ npm run start:dev:server - запуск json-server с нашей бд;
 ```
 -----
 ## Архитектура проекта
-```
+
  Используется [feature slice design](https://feature-sliced.github.io/documentation/ru/docs/get-started/overview).
  Feature-Sliced Design (FSD) — это архитектурная методология для проектирования фронтенд-приложений. Проще говоря, это набор правил и соглашений по организации кода. Главная цель этой методологии — сделать проект понятнее и стабильнее в условиях постоянно меняющихся бизнес-требований.
-```
 
 
 ## Скрипты
@@ -52,3 +51,19 @@ npm run start:dev:server - запуск json-server с нашей бд;
  - [Rating](/src/entities/Rating)
  - [User](/src/entities/User/) 
 -----
+
+## Фичи
+
+ - [AddCommentInArticle](/src/features/AddCommentInArticle) - Реализована логика для добавления комментариев в статьи.
+ - [ArticleRating](/src/features/ArticleRating) - Логика для оценки стати с возможностью добавления пояснения оценки.
+ - [ArticleRecommendationList](/src/features/articleRecommendationList) - Добавление рекомендаций (других статей).
+ - [ArticleViewSelector](/src/features/ArticleViewSelector) - Отвечает за переключение вида плашек статей (существует 2 разновидности).
+ - [AuthByUsername](/src/features/AuthByUsername) - Логика для авторизации пользователя по username.
+ - [AvatarDropdown](/src/features/avatarDropdown) - Релизован выпадающий список по клику на аватар пользователя с различными действиями.
+ - [EditableProfileCard](/src/features/editableProfileCard) - Профиль пользователя с возможностью редактирования.
+ - [LanguageSwitcher](/src/features/LanguageSwitcher) - Логика изменения языка для во всем приложении, для этого исполбзуется библеотка [i18next](https://www.i18next.com).
+ - [OpenNotificationsButton](/src/features/OpenNotificationsButton) - Выпадающее меню с просмотром уведослений для конкретного пользователя, так же есть вид для мобильных устройств.
+ - [ProfileRating](/src/features/ProfileRating) - Логика оценки профиля.
+ - [ScrollSave](/src/features/ProfileRating) - Логика для сохранения состояния скорла.
+ - [ThemeSwitcher](/src/features/ThemeSwitcher) - Позволяет менять тему приложения из доступных тем.
+----
