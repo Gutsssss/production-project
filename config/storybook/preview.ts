@@ -6,9 +6,8 @@ import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/Sty
 
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Theme } from '../../src/app/providers/ThemeProvider';
-
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { Theme } from '../../src/shared/lib/context/ThemeContext';
 
 // Initialize MSW
 
@@ -43,7 +42,6 @@ const preview = {
             },
 
         },
-
     },
 
 };
