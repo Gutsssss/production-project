@@ -5,3 +5,8 @@ export interface Comment {
     text:string,
     user:User
 }
+export interface CommentSchema {
+    id:string,
+    text:string,
+    user:User
+}

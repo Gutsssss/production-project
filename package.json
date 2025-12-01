@@ -48,6 +48,7 @@
     "@storybook/addon-essentials": "^7.6.20",
     "@storybook/addon-interactions": "7.6.20",
     "@storybook/addon-links": "7.6.20",
+    "@storybook/addon-themes": "^10.1.2",
     "@storybook/builder-webpack5": "7.6.20",
     "@storybook/components": "^7.6.20",
     "@storybook/react": "7.6.20",

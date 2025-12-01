@@ -8,7 +8,6 @@ import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator
 
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
-
 // Initialize MSW
 
 initialize({

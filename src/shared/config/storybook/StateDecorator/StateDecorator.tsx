@@ -7,8 +7,9 @@ import { articleDetailsReducer } from '@/entities/Article';
 import { profileReducer } from '@/features/editableProfileCard';
 import { addCommentFormReducer } from '@/entities/Comment';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { ReducerList } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 
-const defaultAsyncReducers:DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers:ReducerList = {
     loginForm: loginReducer,
     articleDetails: articleDetailsReducer,
     profile: profileReducer,
