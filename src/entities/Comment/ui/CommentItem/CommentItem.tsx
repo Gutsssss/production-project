@@ -4,7 +4,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RouterPath } from '@/shared/const/router';
+import { getRouterProfile } from '@/shared/const/router';
 import { ColumnFlex } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/Comment';
 import cls from './CommentItem.module.scss';
@@ -29,7 +29,7 @@ export const CommentItem = memo(({ className, comment, isLoading }: CommentItemP
     }
     return (
         <ColumnFlex gap="8" max className={classNames(cls.CommentItem, {}, [className])}>
-            <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={cls.header}>
+            <AppLink to={getRouterProfile(comment.user.id)} className={cls.header}>
                 {comment?.user?.avatar ? <Avatar className={cls.avatar} size={30} avatar={comment?.user?.avatar} /> : null}
                 <Text title={comment?.user?.username} />
             </AppLink>

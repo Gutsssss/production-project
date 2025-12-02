@@ -33,7 +33,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "generate:slice": "node ./scripts/generateSlice/index.js",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "postinstall": "node ./scripts/clear-cache.js"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -129,7 +130,8 @@
     "react-i18next": "^11.18.6",
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.2.1",
-    "react-virtuoso": "^4.14.1"
+    "react-virtuoso": "^4.14.1",
+    "rimraf": "^6.1.2"
   },
   "loki": {
     "configurations": {

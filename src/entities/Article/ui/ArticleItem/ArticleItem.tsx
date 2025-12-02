@@ -7,7 +7,7 @@ import { Icon } from '@/shared/ui/Icon';
 import ViewIcon from '@/shared/assets/icons/eye_icon.svg';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { RouterPath } from '@/shared/const/router';
+import { getRouterArticlesDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 
 import {
@@ -55,7 +55,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
                         />
                     )}
                     <div className={cls.footer}>
-                        <AppLink target={target} to={RouterPath.article_details + article.id}>
+                        <AppLink target={target} to={getRouterArticlesDetails(article.id)}>
                             <Button>{t('Читать далее')}</Button>
                         </AppLink>
                         {views}
@@ -67,7 +67,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RouterPath.article_details + article.id}
+            to={getRouterArticlesDetails(article.id)}
             className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
         >
             <Card className={cls.card}>

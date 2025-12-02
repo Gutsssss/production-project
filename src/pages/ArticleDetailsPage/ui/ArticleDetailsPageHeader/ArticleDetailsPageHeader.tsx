@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RouterPath } from '@/shared/const/router';
+import { getRouterArticles, getRouterArticlesEdit } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/getArticleDetails/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
+import { useArticleDetailsData } from '@/entities/Article';
 
 interface ArticleDetailsHeaderProps {
   className?: string;
@@ -16,13 +16,13 @@ interface ArticleDetailsHeaderProps {
 export const ArticleDetailsHeader = memo(({ className }: ArticleDetailsHeaderProps) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const article = useSelector(getArticleDetailsData);
+    const article = useArticleDetailsData();
     const canUserEdit = useSelector(getCanEditArticle);
     const onReturn = useCallback(() => {
-        navigate(RouterPath.articles);
+        navigate(getRouterArticles());
     }, [navigate]);
     const onEditArticle = useCallback(() => {
-        navigate(`${RouterPath.articles}/${article?.id}/edit`);
+        navigate(getRouterArticlesEdit(article?.id));
     }, [article?.id, navigate]);
     return (
         <div className={classNames(cls.ArticleDetailsHeader, {}, [className])}>
