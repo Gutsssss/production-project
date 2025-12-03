@@ -31,7 +31,7 @@ export const AvatarDropdown = memo(({ className }: avatarDropdownProps) => {
                 { content: 'Профиль', href: getRouterProfile(authdata.id) },
                 { content: 'Выйти', onCLick: onLogout },
             ]}
-            trigger={<Avatar size={40} avatar={authdata.avatar} />}
+            trigger={<Avatar inverted size={30} avatar={authdata.avatar} />}
         />
     );
 });
