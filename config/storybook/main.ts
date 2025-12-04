@@ -9,7 +9,7 @@ const config: StorybookConfig = {
         // '@storybook/addon-essentials',
         // '@storybook/addon-interactions',
         'msw-storybook-addon',
-        '@storybook/addon-themes',
+        // '@storybook/addon-themes',
     ],
     framework: {
         name: '@storybook/react-webpack5',

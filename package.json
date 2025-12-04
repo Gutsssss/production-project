@@ -31,7 +31,7 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook",
+    "storybook:build": "storybook build -c ./config/storybook",
     "generate:slice": "node ./scripts/generateSlice/index.js",
     "build-storybook": "storybook build",
     "postinstall": "node ./scripts/clear-cache.js"

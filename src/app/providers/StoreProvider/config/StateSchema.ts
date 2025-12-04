@@ -10,11 +10,10 @@ import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { ScrollSaveSchema } from '@/features/ScrollSave';
-import { ArticleDetailsCommentsSchema, ArticleDetailsPageRecommendationSchema, ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { AddCommentSchema } from '@/entities/Comment';
-import { CommentSchema } from '@/entities/Comment/model/types/Comment';
 
 export interface StateSchema {
     counter:CounterSchema

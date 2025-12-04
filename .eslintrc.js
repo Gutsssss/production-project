@@ -65,7 +65,7 @@ module.exports = {
             alias: '@',
             ignoreImportPatterns: ['**/StoreProvider'],
         }],
-        'react/destructuring-assignment': [{"ignoreClassFields":true}],
+        'react/destructuring-assignment': ['warn', 'never'],
     },
     globals: {
         __IS_DEV__: true,

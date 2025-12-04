@@ -1,3 +1,7 @@
-import { rimraf } from 'rimraf';
+const { rimraf } = require('rimraf');
 
-rimraf('./node_modules/.cache');
+(async () => {
+    await rimraf('./node_modules/.cache');
+    await rimraf('./.next');
+    console.log('✅ Cache cleared');
+})();
