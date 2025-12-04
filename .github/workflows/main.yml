@@ -35,10 +35,10 @@ jobs:
         if: always()
         run: npm run storybook:build
       - name: Run visual tests
-  run: |
-    npm install -g http-server
-    http-server storybook-static -p 6006 &
-    SERVER_PID=$!
-    sleep 5
-    npx loki test --requireReference --host localhost --port 6006
-    kill $SERVER_PID
+        run: |
+          npm install -g http-server
+          http-server storybook-static -p 6006 &
+          SERVER_PID=$!
+          sleep 5
+          npx loki test --requireReference --host localhost --port 6006
+          kill $SERVER_PID
