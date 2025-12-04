@@ -11,8 +11,9 @@ import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInin
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { DataTesting } from '@/shared/types/dataTest';
 
-interface PageProps {
+interface PageProps extends DataTesting{
   className?: string;
   children:ReactNode;
   onScrollEnd?:() => void
@@ -36,7 +37,12 @@ export const Page = (props: PageProps) => {
         }));
     }, 500);
     return (
-        <section ref={wrapperRef} className={classNames(cls.Page, {}, [className])} onScroll={onScroll}>
+        <section
+            data-testId={props['data-testid'] ?? 'Page'}
+            ref={wrapperRef}
+            className={classNames(cls.Page, {}, [className])}
+            onScroll={onScroll}
+        >
             {children}
             {onScrollEnd && <div className={cls.targetRef} ref={triggerRef} />}
         </section>

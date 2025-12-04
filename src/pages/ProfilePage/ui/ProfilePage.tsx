@@ -13,7 +13,7 @@ interface ProfilePageProps {
 export const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{id:string}>();
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid='ProfilePage' className={classNames('', {}, [className])}>
             <ColumnFlex gap="16" max>
                 <EditableProfileCard id={id} />
                 <ProfileRating profileId={id} />
