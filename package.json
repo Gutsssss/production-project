@@ -26,7 +26,7 @@
     "test:ui": "loki test --host localhost --port 6006",
     "test:ui:update": "loki update",
     "test:ui:ok": "loki test approved",
-    "test:ui:ci": "npx loki --requireReference --reactUri \"${PWD}/storybook-static\"",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
