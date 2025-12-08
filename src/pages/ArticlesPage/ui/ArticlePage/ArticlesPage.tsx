@@ -8,17 +8,13 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ReducerList, useAcyncReducer } from '@/shared/lib/hooks/useAsyncReducer/useAcyncReducer';
 import { useInintinalEffect } from '@/shared/lib/hooks/useInintialEffect/useInintialEffect';
 import { Text, TextAlign } from '@/shared/ui/Text';
-import {
-    getArticlesPageError,
-    getArticlesPageLoading,
-    getArticlesPageView,
-} from '../../model/selectors/getArticlesPageSelectos';
 import { articlePageReducer, getArticleList } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initActionArticlePage } from '../../model/services/initActionArticlePage';
 import cls from './ArticlesPage.module.scss';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { Page } from '@/widgets/Page';
+import { getArticlesPageLoading, getArticlesPageError, getArticlesPageView } from '../../model/selectors/getArticlesPageSelectos';
 
 interface ArticlesPageProps {
   className?: string;
@@ -26,7 +22,8 @@ interface ArticlesPageProps {
 const reducers:ReducerList = {
     articlePage: articlePageReducer,
 };
-export const ArticlesPage = ({ className }: ArticlesPageProps) => {
+export const ArticlesPage = (props: ArticlesPageProps) => {
+    const { className } = props;
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const articles = useSelector(getArticleList.selectAll);
@@ -47,7 +44,7 @@ export const ArticlesPage = ({ className }: ArticlesPageProps) => {
         );
     }
     return (
-        <Page className={classNames(cls.ArticlesPage, {}, [className])}>
+        <Page data-testid="ArticlesPage" className={classNames(cls.ArticlesPage, {}, [className])}>
             <ArticlePageFilters />
             <ArticleList
                 className={cls.list}
