@@ -629,6 +629,12 @@
       "userId": "1",
       "text": "123",
       "id": "vdmjD3I"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hai",
+      "id": "4w-OdJ-"
     }
   ],
   "users": [
@@ -691,6 +697,17 @@
       "city": "Tymen",
       "username": "Sane4ka",
       "avatar": "https://i.pinimg.com/originals/a9/7d/ed/a97ded12d162e93c6dc932e9ae975a64.png"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [

@@ -14,10 +14,11 @@ interface CommentListProps {
 }
 
 export const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => (
-    <ColumnFlex max gap="8" className={classNames(cls.CommentList, {}, [className])}>
+    <ColumnFlex data-testid="CommentCard.Content" max gap="8" className={classNames(cls.CommentList, {}, [className])}>
         {comments.length
             ? comments?.map((comment) => (
                 <CommentItem
+                    data-testid="CommentCard.Content"
                     key={comment.id}
                     isLoading={isLoading}
                     comment={comment}

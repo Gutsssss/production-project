@@ -27,9 +27,15 @@ export const AddNewComment = memo(({ className, onSend }: AddNewCommentProps) =>
     }, [onCommentTextChange, onSend, text]);
 
     return (
-        <div className={classNames(cls.AddNewComment, {}, [className])}>
-            <Input className={cls.input} placeholder={t('Введите текст комметария')} value={text} onChange={onCommentTextChange} />
-            <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+        <div data-testid="AddCommentForm" className={classNames(cls.AddNewComment, {}, [className])}>
+            <Input
+                data-testid="AddComment.Input"
+                className={cls.input}
+                placeholder={t('Введите текст комметария')}
+                value={text}
+                onChange={onCommentTextChange}
+            />
+            <Button data-testid="AddComment.Button" onClick={onSendHandler}>{t('Отправить')}</Button>
         </div>
     );
 });

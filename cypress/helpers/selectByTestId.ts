@@ -1,3 +1,3 @@
 export function selectByTestId(tesiId:string) {
-    return `[data-testid=${tesiId}]`;
+    return `[data-testid="${tesiId}"]`;
 }

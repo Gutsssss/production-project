@@ -41,7 +41,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     if (view === ArticleView.BIG_PLATE) {
         const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
         return (
-            <div className={classNames(cls.ArticleItem, {}, [className, cls[view]])}>
+            <div data-testid="AatticleItem" className={classNames(cls.ArticleItem, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} avatar={article.user?.avatar} />
@@ -77,7 +77,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
             to={getRouterArticlesDetails(article.id)}
             className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
         >
-            <Card className={cls.card}>
+            <Card data-testid="AatticleItem" className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <AppImage
                         fallback={<Skeleton width="200px" height="200px" />}

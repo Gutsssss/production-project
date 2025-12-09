@@ -91,7 +91,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         );
     }
     return (
-        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        <div data-testid="ArticleDetails.Info" className={classNames(cls.ArticleDetails, {}, [className])}>
             {content}
         </div>
     );

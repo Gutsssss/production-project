@@ -38,7 +38,7 @@ export const Page = (props: PageProps) => {
     }, 500);
     return (
         <section
-            data-testId={props['data-testid'] ?? 'Page'}
+            data-testid={props['data-testid'] ?? 'Page'}
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}

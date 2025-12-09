@@ -30,7 +30,13 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
         dispatch(fetchArticleDetailsCommentsById(id));
     });
     return (
-        <ColumnFlex gap="8" max justify="center" align="center" className={classNames('', {}, [className])}>
+        <ColumnFlex
+            gap="8"
+            max
+            justify="center"
+            align="center"
+            className={classNames('', {}, [className])}
+        >
             <Text size={TextSize.L} title={t('Комментарии')} />
             <AddCommentInArticle onSend={onSendComment} />
             <CommentList

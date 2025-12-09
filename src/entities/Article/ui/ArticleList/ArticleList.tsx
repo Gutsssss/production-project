@@ -81,6 +81,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view === ArticleView.BIG_PLATE
             ? (
                 <Virtuoso
+                    data-testid="ArticleList"
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                     endReached={loadNextPart}
                     data={articles}
@@ -98,6 +99,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 />
             ) : (
                 <VirtuosoGrid
+                    data-testid="ArticleList"
                     components={{ Footer }}
                     style={{ height: '100%' }}
                     endReached={loadNextPart}
